@@ -4,7 +4,7 @@ Trabalho de desenvolvimento de um sistema de gestão de solicitação de manuten
 
 ### ALUNOS
 
-- [Ana Laura Manfron Dias] ![(http://github.com/GuilhermeSchreiber7)](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+- [Ana Laura Manfron Dias](https://github.com/analauradias)
 - [Guilherme Schreiber](http://github.com/GuilhermeSchreiber7)
 - [Isabelli Luisa Rosa](http://github.com/isabellirosa)
 - [Júlia Fuck](http://github.com/fujulia)
