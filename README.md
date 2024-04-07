@@ -2,8 +2,6 @@
 
 Trabalho de desenvolvimento de um sistema de gestão de solicitação de manutenção.
 
-------------
-
 ### ALUNOS
 
 - [Ana Laura Manfron Dias](http://github.com/analauradias)
@@ -14,15 +12,13 @@ Trabalho de desenvolvimento de um sistema de gestão de solicitação de manuten
 
 #### Turma: 2INFO3
 
-------------
-
 ## SUMÁRIO
 
 1. Requisitos
-	 i- Funcionais e Regras de Negócio
-	 ii- Não Funcionais
+    1. Elemento recuado
+    2. Elemento recuado
 1. Modelagem de Banco de Dados
-	i- Modelo conceitual
-	ii- Modelo Lógico
+    1. Elemento recuado
+    2. Elemento recuado
 1. Pototipagem figma
 1. Aplicação Vue
