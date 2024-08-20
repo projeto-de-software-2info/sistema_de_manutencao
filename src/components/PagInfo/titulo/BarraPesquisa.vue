@@ -17,6 +17,7 @@ input {
     font-size: 2.5vh;
     padding-left: 4.5vh;
     font-family: "Poppins", sans-serif;
+    color: rgba(56, 92, 125, 1);
 }
 ::-webkit-input-placeholder {
    color: rgba(56, 92, 125, 1);

@@ -11,17 +11,19 @@
         display: flex;
         justify-content: center;    
         align-items: center;
-        height: 5vh;
-        width: 5vh;
+        height: 32px;
+        width: 32px;
         background-color: rgba(56, 92, 125, 1);
-        border-radius: 50%;
+        border-radius: 20px;
+        position: relative;
     }
     button {
         font-family: 'Poppins', sans-serif;
-        font-size: 4vh;
+        font-size: 3.5vh;
         color: rgba(255, 255, 255, 1);
         background-color: transparent;
         border: none;
         border-radius: 50%;
+        position: relative;
     }
 </style>

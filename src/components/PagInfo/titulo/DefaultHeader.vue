@@ -20,7 +20,7 @@
         padding: 3%;
         margin: 7.338vh 6.25vw 0vh  3.9vw;
         border-radius: 10px;
-        width: 100%;
+        width: 66vw;
         height: 14.4vh;
 
     }
@@ -35,5 +35,6 @@
         justify-content: space-between;
         align-items: center;
         width: 25vw;
+
     }
 </style>
