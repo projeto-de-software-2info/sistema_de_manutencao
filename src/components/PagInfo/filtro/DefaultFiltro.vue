@@ -1,23 +1,64 @@
 <script setup>
+ import { ref } from 'vue';
+ const filtros = ref(['filtro 1', 'filtro 2', 'filtro 3']);
+ function remover(index) {
+    filtros.value.splice(index, 1)
+  }
 </script>
 <template>
-    <div><p>Filtros:</p></div>
+    <div>
+        <p>Filtros:</p>
+        <ul>
+            <li v-for="(filtro, index) in filtros" :key="index">
+                {{ filtro }} <button @click="remover(index)">x</button>
+            </li>
+        </ul>
+    </div>
 </template>
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
     div {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         width: 66vw;
         height: 100%;
         border-radius: 10px;
     }
     p {
+        font-size: 2.5vh;
+        color: rgba(56, 92, 125, 1);
+        font-family: "Poppins", sans-serif;
+        margin: 1.9vh 0 1vh 4vw;
+    }
+    ul{
+        display: flex;
+        margin-bottom: 1vh;
+    }
+    li{
         font-size: 2vh;
         color: rgba(56, 92, 125, 1);
         font-family: "Poppins", sans-serif;
-        margin-left: 3.9vw;
+        margin-left: 1.8vw;
         margin-top: 1.9vh;
+        background-color: rgba(255, 255, 255, 0.75);
+        list-style: none;
+        padding: 0.5px 10px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    button{
+        font-size: 1.8vh;
+        color: rgba(56, 92, 125, 1);
+        font-family: "Poppins", sans-serif;
+        background-color: transparent;
+        border: none;
+        width: 2.6vh;
+        margin-left: 1vw;
+        border-radius: 100%;
+        
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: rgba(200, 200, 200, 0.75);
     }
 </style>

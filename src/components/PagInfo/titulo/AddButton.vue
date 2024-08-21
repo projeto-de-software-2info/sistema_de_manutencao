@@ -12,7 +12,7 @@
         justify-content: center;    
         align-items: center;
         height: 32px;
-        width: 32px;
+        width: 35px;
         background-color: rgba(56, 92, 125, 1);
         border-radius: 20px;
         position: relative;
