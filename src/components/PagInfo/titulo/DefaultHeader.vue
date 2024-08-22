@@ -22,8 +22,9 @@
         border-radius: 10px;
         width: 66vw;
         height: 14.4vh;
-
+        
     }
+   
     p {
         font-size: 6vh;
         color: rgba(56, 92, 125, 1);
