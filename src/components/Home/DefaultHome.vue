@@ -1,57 +1,33 @@
 <script setup>
-import Navbar from '../Navbar/DefaultNavbar.vue'
+import ContainerInformations from './Container/ContainerInformations.vue'
+import ContainerCliente from './Container/ContainerCliente.vue'
+import HomeGraphs from './grafico/HomeGraphs.vue'
+import GraficoFaturamento from '@/assets/imagens/faturamento-total.png'
+import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
 </script>
 <template>
   <div id="div">
-    <Navbar/>
     <div class="main">
       <div class="containers">
-        <div class="container">
-          <span class="number">146</span><span class="tipo">orçamentos</span>
-        </div>
-        <div class="container">
-          <span class="number">134</span><span class="tipo">serviços</span>
-        </div>
-        <div class="container">
-          <span class="number">134</span><span class="tipo">clientes</span>
-        </div>
-        <div class="container">
-          <span class="number">36</span><span class="tipo">fornecedores</span>
-        </div>
+        <ContainerInformations number="146" type="orçamentos" />
+        <ContainerInformations number="134" type="serviços" />
+        <ContainerInformations number="134" type="clientes" />
+        <ContainerInformations number="36" type="fornecedores" />
       </div>
       <div class="containers">
         <div class="clientes">
           <span class="titulo-principal">PRINCIPAIS CLIENTES</span>
-          <div class="cliente">
-            <img class="icon" src="@/assets/imagens/cliente.png" />
-            <span>rafaelabarbieri@gmail.com</span>
-            <span>...</span>
-          </div>
-          <div class="cliente">
-            <img class="icon" src="@/assets/imagens/cliente.png" />
-            <span>rafaelabarbieri@gmail.com</span>
-            <span>...</span>
-          </div>
-          <div class="cliente">
-            <img class="icon" src="@/assets/imagens/cliente.png" />
-            <span>rafaelabarbieri@gmail.com</span>
-            <span>...</span>
-          </div>
-          <div class="cliente">
-            <img class="icon" src="@/assets/imagens/cliente.png" />
-            <span>rafaelabarbieri@gmail.com</span>
-            <span>...</span>
-          </div>
-          <div class="cliente">
-            <img class="icon" src="@/assets/imagens/cliente.png" />
-            <span>rafaelabarbieri@gmail.com</span>
-            <span>...</span>
-          </div>
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
         </div>
         <div class="graficos">
-          <img class="grafico" src="@/assets/imagens/faturamento-total.png" />
+          <HomeGraphs :image="GraficoFaturamento"/>
           <div class="alinhar-fim">
-          <img class="grafico" src="@/assets/imagens/entrada-e-saida.png" /></div>
+            <HomeGraphs :image="GraficoEntradaSaida"/>
+          </div>
         </div>
       </div>
     </div>
@@ -63,58 +39,27 @@ import Navbar from '../Navbar/DefaultNavbar.vue'
   background-color: #F5F5F5;
 }
 .main {
-    min-height: 100vh;
-    margin-left: 20vw;
-    padding: 1vw 10vw;
-    max-width: 100vw;
+  min-height: 100vh;
+  margin-left: 20vw;
+  padding: 1vw 10vw;
+  max-width: 100vw;
 }
-.icon {
-  width: 20px;
-}
-.grafico, .graficos {
+.graficos {
   width: 28vw;
 }
-.grafico{
-    border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-.graficos{
-    display: flex;
-    flex-direction: column;
-    height: 480px;
-    align-content: end
-}
-.alinhar-fim{
-    display: flex;
-    flex-direction: column;
-    height: 460px;
-    align-content: end;
-    flex-flow: column-reverse;
-}
-.container {
-  width: 12vw;
-  height: 130px;
-  background-color: #385C7D;
-  border-radius: 10px;
+.graficos {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  height: 480px;
+  align-content: end
 }
-
-.number {
-  font-weight: bold;
-  color: white;
-  font-size: 40px;
+.alinhar-fim {
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  align-content: end;
+  flex-flow: column-reverse;
 }
-
-.tipo {
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-}
-
 .clientes {
   display: flex;
   align-items: center;
@@ -125,21 +70,6 @@ import Navbar from '../Navbar/DefaultNavbar.vue'
   width: 28vw;
   border-radius: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-
-.cliente {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #c8c8c84f;
-  height: 50px;
-  width: 90%;
-  border-radius: 10px;
-  margin: 11px 0px;
-}
-
-.cliente span{
-    font-weight: 600;
 }
 .titulo-principal {
   font-weight: 700;
