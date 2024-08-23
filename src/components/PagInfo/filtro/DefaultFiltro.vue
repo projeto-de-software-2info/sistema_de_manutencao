@@ -16,8 +16,6 @@ function remover(index) {
             </ul>
         </div>
         <div class="listaFiltros">
-            <p>Filtros</p>
-            <img src="@/assets/imagens/polygon.png" alt="">
         </div>
     </div>
 </template>
@@ -28,7 +26,6 @@ function remover(index) {
     display: flex;
     align-items: center;
     width: 66vw;
-    height: 100%;
     border-radius: 10px;
     justify-content: space-between;
 }
@@ -40,9 +37,9 @@ function remover(index) {
     display: flex;
     align-items: center;
 }
-img{
-    width: 0.7vw;
-    height: 0.7vh;
+polygon{
+    width: 1vw;
+    height: 1vh;
     margin-left: 0.5vw;
 }
 select{
@@ -79,6 +76,7 @@ li {
     padding: 0.5px 10px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
 
 button {
