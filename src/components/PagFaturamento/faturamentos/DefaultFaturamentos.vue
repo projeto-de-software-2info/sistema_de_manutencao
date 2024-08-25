@@ -1,0 +1,247 @@
+<script setup>
+const pessoas = [
+    {
+        id: 1,
+        email: 'juliaifc22@gmail.com',
+        tipo: 'Fornecedor',
+        data: '1 maio,  2024',
+        valor: '- R$ 50,00'
+    },
+    {
+        id: 2,
+        email: 'rafaelabarbieric@gmail.com',
+        tipo: 'Fornecedor',
+        data: '1 maio,  2024',
+        valor: '- R$ 50,00'
+    },
+    {
+        id: 3,
+        email: 'anamanfrondias@gmail.com',
+        tipo: 'Fornecedor',
+        data: '1 maio,  2024',
+        valor: '- R$ 50,00'
+    },
+    {
+        id: 4,
+        email: 'isabelli.ifc@gmail.com',
+        tipo: 'Fornecedor',
+        data: '1 maio,  2024',
+        valor: '- R$ 50,00'
+    },
+    {
+        id: 5,
+        email: 'guilhermeschreiber@gmail.com',
+        tipo: 'Fornecedor',
+        data: '1 maio,  2024',
+        valor: '- R$ 50,00'
+    }
+];
+</script>
+<template>
+    <main>
+        <div class="container-2">
+            <ul class="ul-2">
+                <li class="margin-fat">
+                    <div class="entrada">
+                        <div class="margin-status">
+                            <p class="text-num">R$ 3 137 904,00</p>
+                            <p class="texto-centro">Entrada</p>
+                        </div>
+                        <div>
+                            <img class="margin-img" src="/src/components/PagFaturamento/imagens/download.png" alt="">
+                        </div>
+                    </div>
+                </li>
+                <li class="li-2 margin-fat">
+                    <div class="saida">
+                        <div class="margin-status">
+                            <p class="text-num">R$ 3 137 904,00</p>
+                            <p class="texto-centro">Saída</p>
+                        </div>
+                        <div>
+                            <img class="margin-img" src="/src/components/PagFaturamento/imagens/download-2.png" alt="">
+                        </div>
+                    </div>
+                </li>
+                <li class="li-2 margin-fat">
+                    <div class="total">
+                        <p  class="text-num texto-centro">R$ 38 137 904,00</p>
+                        <p  class="texto-centro">Total</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <ul class="ul-1">
+                <li v-for="pessoa in pessoas" :key="pessoa.id">
+                    <div>
+                        <img class="margin-img-2" src="/src/components/PagFaturamento/imagens/download-2.png" alt="">
+                    </div>
+                    <div class="nome-email">
+                        <p class="name">{{ pessoa.email }}</p>
+                        <p class="email">{{ pessoa.tipo }}</p>
+                    </div>
+                    <div class="status">
+                        <p>{{ pessoa.valor }}</p>
+                    </div>
+                    <div class="data">
+                        <p>{{ pessoa.data }}</p>
+                    </div>
+                    <div class="botao">
+                        <Button><p>ver mais</p></Button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</template>
+<style scoped>
+main {
+    display: flex;
+    background-color: rgba(243, 243, 243, 1);
+    
+}
+
+p {
+   
+    color: #3F3F3F;
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 88vw;
+    border-radius: 10px;
+    margin-bottom: 16vh;
+}
+.container-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 88vw;
+    border-radius: 10px;
+}
+.entrada{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.saida{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.ul-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+}
+.ul-2 {
+    display: flex;
+    flex-direction: row; 
+    justify-content: start;
+    padding: 0;
+    width: 66vw;
+}
+.li-2{
+    margin-left: 2vh;
+}
+.entrada p{
+    color: #076510;
+    margin-left: 20px;
+}
+.saida p{
+    color: #650707;
+    margin-left: 20px;
+}
+.total p{
+    color: #012340;
+    margin-left: 20px;
+    margin-left: 70px;
+}
+.texto-centro{
+    text-align: center;
+    font-size: 18px;
+}
+li {
+    display: flex;;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    width: 66vw;
+    margin: 1vh 0;
+    padding: 1vh 3vw 0 0;
+    box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
+}
+
+.nome-email {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 4vw;
+    width: 25.5vw;
+}
+.name{
+   font-weight: 600;
+   font-size: 2,2vh;
+}
+.email{
+    font-size: 1.8vh;
+    color: #3F3F3F;
+}
+.data{
+     width: 16.5vw;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+}
+.data p{
+    font-size: 0.82vw;
+}
+.status{
+    width: 13.5vw;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+.status p{
+    font-size: 1vw;
+    margin-left: 40px;
+    color: #650707;
+}
+.botao{
+    width: 16.5vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+button p {
+    margin-left: 5vw;
+    font-size: 2vh;
+    color: #3F3F3F;
+    font-weight: 700;
+}
+.margin-status{
+    margin-left: 15px;
+}
+.text-num{
+    font-size: 19px;
+}
+.margin-img{
+    margin-left: 50px;
+    margin-top: 15px;
+}
+.margin-img-2{
+    margin-left: 50px;
+}
+.margin-fat{
+   height: 80px;
+}
+</style>
