@@ -59,6 +59,7 @@ input[type='email'] {
   margin-bottom: 18px;
 }
 
+
 input::placeholder {
   font-weight: bold;
   padding: 15px;
