@@ -1,6 +1,43 @@
 <script setup>
-import LoginForm from './form/LoginForm.vue'
 import LoginLogo from './logo/LoginLogo.vue'
+import DefaultForm from '../Form/DefaultForm.vue'
+import { ref } from 'vue'
+import router from '@/router'
+
+const dados = ref({
+  email: '',
+  senha: '',
+  adm: ''
+})
+
+const fields = [
+  {
+    type: 'email',
+    placeholder: 'email',
+    value: 'email',
+    required: 'true'
+  },
+  {
+    type: 'password',
+    placeholder: 'senha',
+    value: 'senha',
+    required: 'true'
+  },
+  {
+    type: 'checkbox',
+    value: 'adm',
+    nome: 'administrador'
+  }
+]
+
+function salvar(info) {
+  dados.value = info
+  if (dados.value.adm == true) {
+    router.push('/home')
+  } else {
+    router.push('/oii')
+  }
+}
 </script>
 <template>
   <main>
@@ -8,12 +45,7 @@ import LoginLogo from './logo/LoginLogo.vue'
       <LoginLogo />
     </section>
     <section class="login-form">
-      <div>
-        <h1>Login</h1>
-        <div class="form">
-          <LoginForm />
-        </div>
-      </div>
+      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Login" />
     </section>
   </main>
 </template>
@@ -42,24 +74,5 @@ main section {
 
 .login-logo {
   background-color: white;
-}
-
-h1 {
-  color: white;
-  font-size: 60px;
-  text-align: center;
-  margin-bottom: 55px;
-}
-
-.form {
-  width: 324px;
-  padding: 68px 50px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #707070;
 }
 </style>
