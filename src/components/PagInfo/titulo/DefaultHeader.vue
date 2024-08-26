@@ -1,10 +1,14 @@
 <script setup>
     import AddButton from './AddButton.vue';
     import BarraPesquisa from './BarraPesquisa.vue';
+    
+    defineProps({
+        titulo: String
+    })
 </script>
 <template>
     <div class="header">
-        <p>Serviços</p>
+        <p>{{ titulo }}</p>
         <div class="container">
         <BarraPesquisa />
         <AddButton />

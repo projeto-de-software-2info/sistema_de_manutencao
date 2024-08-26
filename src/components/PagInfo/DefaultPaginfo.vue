@@ -6,7 +6,7 @@
 
 <template>
     <main>
-        <DefaultHeader />
+        <DefaultHeader titulo="Serviço" />
         <DefaultFiltro /> 
         <DefaultInfoCliente />
     </main>
