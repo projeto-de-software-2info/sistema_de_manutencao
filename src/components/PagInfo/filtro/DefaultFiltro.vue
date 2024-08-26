@@ -28,6 +28,7 @@ function remover(index) {
     width: 66vw;
     border-radius: 10px;
     justify-content: space-between;
+    margin-left: 14vw;
 }
 
 .filtros {
@@ -57,7 +58,7 @@ p {
     font-size: 2.5vh;
     color: rgba(56, 92, 125, 1);
     font-family: "Poppins", sans-serif;
-    margin: 1.9vh 0 1vh 4vw;
+    margin: 1.9vh 0 1vh 0;
 }
 
 ul {

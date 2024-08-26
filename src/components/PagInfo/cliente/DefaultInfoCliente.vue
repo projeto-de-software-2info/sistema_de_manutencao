@@ -65,7 +65,7 @@ const pessoas = [
 main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
-    
+    margin-left: 40vw;
 }
 
 p {
@@ -78,7 +78,6 @@ p {
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    width: 88vw;
     border-radius: 10px;
     margin-bottom: 16vh;
 }
@@ -95,7 +94,7 @@ li {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 10px;
     width: 66vw;
-    margin: 1vh 0;
+    margin: 1vh 0 0 13.5vw;
     padding: 1vh 3vw 0 0;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
