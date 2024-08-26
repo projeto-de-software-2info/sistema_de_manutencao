@@ -28,6 +28,7 @@ function remover(index) {
     width: 66vw;
     border-radius: 10px;
     justify-content: space-between;
+    margin-left: 6vw;
 }
 
 .filtros {

@@ -18,7 +18,7 @@
         align-items: center;
         background-color: rgba(200, 200, 200, 0.18);
         padding: 3%;
-        margin: 7.338vh 6.25vw 0vh  3.9vw;
+        margin: 7.338vh 6.25vw 0 20vw;
         border-radius: 10px;
         width: 66vw;
         height: 14.4vh;
