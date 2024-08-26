@@ -93,7 +93,7 @@ li {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 10px;
-    width: 65vw;
+    width: 66vw;
     margin: 1vh 0 0 13.5vw;
     padding: 1vh 3vw 0 0;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
