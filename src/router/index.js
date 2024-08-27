@@ -68,6 +68,37 @@ const router = createRouter({
         }
       ],
     },
+    {
+      path: '/cliente',
+      component: () => import('../layouts/ClienteLayout.vue'),
+      children: [
+        {
+          path: '/homeCliente',
+          name: 'home',
+          component: () => import('../views/cliente/HomeView.vue')
+        },
+        {
+          path: '/servicosCliente',
+          name: 'servicos',
+          component: () => import('../views/cliente/ServicosView.vue'),
+        },
+        {
+          path: '/orcamentosCliente',
+          name: 'orcamentos',
+          component: () => import('../views/cliente/OrcamentosView.vue'),
+        },
+        {
+          path: '/produtosCliente',
+          name: 'produtos',
+          component: () => import('../views/cliente/ProdutosView.vue'),
+        },
+        {
+          path: '/perfilCliente',
+          name: 'perfil',
+          component: () => import('../views/cliente/PerfilView.vue'),
+        }
+      ],
+    },
   ]
 })
 
