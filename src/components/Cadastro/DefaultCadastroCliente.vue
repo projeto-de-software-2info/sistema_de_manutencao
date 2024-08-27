@@ -1,16 +1,24 @@
 <script setup>
-import LoginLogo from './logo/LoginLogo.vue'
 import DefaultForm from '../Form/DefaultForm.vue'
 import { ref } from 'vue'
 import router from '@/router'
 
 const dados = ref({
+  nomeCompleto: '',
   email: '',
   senha: '',
-  adm: ''
+  cep: '',
+  endereco: '',
+  telefone: ''
 })
 
 const fields = [
+  {
+    type: 'string',
+    placeholder: 'nome completo',
+    value: 'nomeCompleto',
+    required: 'true'
+  },
   {
     type: 'email',
     placeholder: 'email',
@@ -24,9 +32,22 @@ const fields = [
     required: 'true'
   },
   {
-    type: 'checkbox',
-    value: 'adm',
-    nome: 'administrador'
+    type: 'number',
+    placeholder: 'cep',
+    value: 'cep',
+    required: 'true'
+  },
+  {
+    type: 'string',
+    placeholder: 'endereço',
+    value: 'endereco',
+    required: 'true'
+  },
+  {
+    type: 'number',
+    placeholder: 'telefone',
+    value: 'telefone',
+    required: 'true'
   }
 ]
 
@@ -41,17 +62,8 @@ function salvar(info) {
 </script>
 <template>
   <main>
-    <section class="login-logo">
-      <LoginLogo />
-    </section>
     <section class="login-form">
-      <DefaultForm
-        :fields="fields"
-        @enviar="salvar"
-        :dados="dados"
-        titulo="Login"
-        button-nome="Entrar"
-      />
+      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Clientes" />
     </section>
   </main>
 </template>
@@ -63,12 +75,13 @@ function salvar(info) {
 
 main {
   display: flex;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
+  margin-left: 20vw;
 }
 
 main section {
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import ButtonForm from './button/ButtonForm.vue'
 import InputForm from './input/InputForm.vue'
+import router from '@/router'
 const props = defineProps(['fields', 'dados', 'titulo'])
 const formdata = ref({ ...props.dados })
 function estilo(type) {
@@ -13,6 +14,7 @@ function estilo(type) {
 }
 </script>
 <template>
+  <div class="sair" v-if="$route.fullPath != '/'" @click="router.back()">X</div>
   <div>
     <h1>{{ props.titulo }}</h1>
     <div class="form">
@@ -28,7 +30,7 @@ function estilo(type) {
           <small v-if="field.type == 'password'">Esqueceu a senha?</small>
           <div v-if="field.type == 'checkbox'" class="checkbox">{{ field.nome }}</div>
         </div>
-        <ButtonForm titulo="Entrar" />
+        <ButtonForm :titulo="$route.fullPath == '/' ? 'Entrar' : 'Cadastrar'" />
       </form>
     </div>
   </div>
@@ -37,6 +39,15 @@ function estilo(type) {
 <style scoped>
 * {
   font-weight: bold;
+}
+
+.sair {
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 50px;
+  right: 35px;
+  cursor: pointer;
 }
 .content-input {
   display: flex;
