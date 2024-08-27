@@ -74,8 +74,9 @@ main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
 }
-
 p {
+   
+    color: #3F3F3F;
     font-family: "Poppins", sans-serif;
 }
 .container {
@@ -83,9 +84,9 @@ p {
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    width: 88vw;
     border-radius: 10px;
     margin-bottom: 16vh;
+    margin-left: 20vw;
 }
 ul {
     display: flex;
