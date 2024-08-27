@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(243, 243, 243, 1);
-    margin-left: 20vw;
+    margin-left: 10px;
     height: 100vh;
     }
 </style>
