@@ -39,15 +39,15 @@ const pessoas = [
 </script>
 <template>
     <main>
-        <div class="container-2">
+        <div class="container" id="container-2">
             <ul class="ul-2">
                 <li class="margin-fat">
                     <div class="entrada">
                         <div class="margin-status">
                             <p class="text-num">R$ 3 137 904,00</p>
-                            <p class="texto-centro">Entrada</p>
+                            <p class="texto-centro" id="cor-entrada">Entrada</p>
                         </div>
-                        <div>
+                        <div >
                             <img class="margin-img" src="/src/components/PagFaturamento/imagens/download.png" alt="">
                         </div>
                     </div>
@@ -99,9 +99,7 @@ const pessoas = [
 main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
-    
 }
-
 p {
    
     color: #3F3F3F;
@@ -112,17 +110,13 @@ p {
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    width: 88vw;
     border-radius: 10px;
     margin-bottom: 16vh;
+    margin-left: 20vw;
 }
-.container-2{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    width: 88vw;
-    border-radius: 10px;
+#container-2{
+   margin-bottom: 10px;
+
 }
 .entrada{
     display: flex;
@@ -165,7 +159,7 @@ p {
 }
 .texto-centro{
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
 }
 li {
     display: flex;;
@@ -232,16 +226,21 @@ button p {
     margin-left: 15px;
 }
 .text-num{
-    font-size: 19px;
+    font-size:30px;
 }
 .margin-img{
     margin-left: 50px;
     margin-top: 15px;
+    height: 30px;
 }
 .margin-img-2{
     margin-left: 50px;
 }
 .margin-fat{
-   height: 80px;
+   height: 100px;
+}
+#cor-entrada{
+    color: #27B435;
+    font-size: 25px;
 }
 </style>
