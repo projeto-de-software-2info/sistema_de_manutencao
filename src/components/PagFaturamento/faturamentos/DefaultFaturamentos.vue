@@ -5,35 +5,35 @@ const pessoas = [
         email: 'juliaifc22@gmail.com',
         tipo: 'Fornecedor',
         data: '1 maio,  2024',
-        valor: '- R$ 50,00'
+        valor: - 50.00
     },
     {
         id: 2,
         email: 'rafaelabarbieric@gmail.com',
-        tipo: 'Fornecedor',
+        tipo: 'Cliente',
         data: '1 maio,  2024',
-        valor: '- R$ 50,00'
+        valor: 50.00
     },
     {
         id: 3,
         email: 'anamanfrondias@gmail.com',
         tipo: 'Fornecedor',
         data: '1 maio,  2024',
-        valor: '- R$ 50,00'
+        valor:  - 50.00
     },
     {
         id: 4,
         email: 'isabelli.ifc@gmail.com',
         tipo: 'Fornecedor',
         data: '1 maio,  2024',
-        valor: '- R$ 50,00'
+        valor: - 50.00
     },
     {
         id: 5,
         email: 'guilhermeschreiber@gmail.com',
-        tipo: 'Fornecedor',
+        tipo: 'Cliente',
         data: '1 maio,  2024',
-        valor: '- R$ 50,00'
+        valor: 50
     }
 ];
 </script>
@@ -56,7 +56,7 @@ const pessoas = [
                     <div class="saida">
                         <div class="margin-status">
                             <p class="text-num">R$ 3 137 904,00</p>
-                            <p class="texto-centro">Saída</p>
+                            <p class="texto-centro" id="cor-saida">Saída</p>
                         </div>
                         <div>
                             <img class="margin-img" src="/src/components/PagFaturamento/imagens/download-2.png" alt="">
@@ -66,7 +66,7 @@ const pessoas = [
                 <li class="li-2 margin-fat">
                     <div class="total">
                         <p  class="text-num texto-centro">R$ 38 137 904,00</p>
-                        <p  class="texto-centro">Total</p>
+                        <p  class="texto-centro" id="cor-total">Total</p>
                     </div>
                 </li>
             </ul>
@@ -75,14 +75,16 @@ const pessoas = [
             <ul class="ul-1">
                 <li v-for="pessoa in pessoas" :key="pessoa.id">
                     <div>
-                        <img class="margin-img-2" src="/src/components/PagFaturamento/imagens/download-2.png" alt="">
+                        <img v-if="pessoa.valor < 0" class="margin-img-2" src="/src/components/PagFaturamento/imagens/download-2.png" alt="">
+                        <img v-else class="margin-img-2" src="/src/components/PagFaturamento/imagens/download.png" alt="">
                     </div>
                     <div class="nome-email">
                         <p class="name">{{ pessoa.email }}</p>
                         <p class="email">{{ pessoa.tipo }}</p>
                     </div>
                     <div class="status">
-                        <p>{{ pessoa.valor }}</p>
+                        <p v-if="pessoa.valor < 0" id="cor-negativo">R$ {{ pessoa.valor }}</p>
+                        <p v-else id="cor-positivo">R$ +{{ pessoa.valor }}</p>
                     </div>
                     <div class="data">
                         <p>{{ pessoa.data }}</p>
@@ -116,7 +118,6 @@ p {
 }
 #container-2{
    margin-bottom: 10px;
-
 }
 .entrada{
     display: flex;
@@ -204,7 +205,12 @@ li {
 .status p{
     font-size: 1vw;
     margin-left: 40px;
+}
+#cor-negativo{
     color: #650707;
+}
+#cor-positivo{
+    color: #076510;
 }
 .botao{
     width: 16.5vw;
@@ -220,27 +226,35 @@ button p {
     margin-left: 5vw;
     font-size: 2vh;
     color: #3F3F3F;
-    font-weight: 700;
+    font-weight: 600;
 }
 .margin-status{
-    margin-left: 15px;
+    margin-left: 50px;
 }
 .text-num{
-    font-size:30px;
+    font-size: 18px;
 }
 .margin-img{
-    margin-left: 50px;
+    margin-left: 15px;
     margin-top: 15px;
     height: 30px;
 }
 .margin-img-2{
-    margin-left: 50px;
+    margin-left: 40px;
 }
 .margin-fat{
-   height: 100px;
+   height: 80px;
 }
 #cor-entrada{
     color: #27B435;
-    font-size: 25px;
+    font-size: 18px;
+}
+#cor-saida{
+    color: #B42727;
+    font-size: 18px;
+}
+#cor-total{
+    color: #385C7D;
+    font-size: 18px;
 }
 </style>
