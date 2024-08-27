@@ -1,6 +1,7 @@
 <script setup>
    
     import BarraPesquisa from './BarraPesquisa.vue';
+    import ButtonAdd from './ButtonAdd.vue';
     
     defineProps({
         titulo: String
@@ -11,6 +12,7 @@
         <p>{{ titulo }}</p>
         <div class="container">
         <BarraPesquisa />
+        <ButtonAdd />
       
         </div>
     </div>
@@ -22,7 +24,7 @@
         align-items: center;
         background-color: rgba(200, 200, 200, 0.18);
         padding: 3%;
-        margin: 7.338vh 6.25vw 0 20vw;
+        margin: 7.338vh 6.25vw 0 26vw;
         border-radius: 10px;
         width: 66vw;
         height: 14.4vh;

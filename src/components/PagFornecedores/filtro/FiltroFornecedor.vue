@@ -27,7 +27,7 @@ function remover(index) {
     align-items: center;
     width: 66vw;
     border-radius: 10px;
-    margin: 0 0 0 6vw;
+    margin: 0 0 0 12vw;
     justify-content: space-between;
 }
 
