@@ -10,7 +10,7 @@ const pessoas = [
     },
     {
         id: 2,
-        name: 'Rafaela Barbieri da Cruz',
+        name: 'Rafaela Barbieri',
         email: 'rafaelabarbieric@gmail.com',
         cellphone: 'Motorola',
         data:  '5 maio,  2024',
@@ -18,7 +18,7 @@ const pessoas = [
     },
     {
         id: 3,
-        name: 'Ana Laura Manfrom Dias',
+        name: 'Ana Laura Dias',
         email: 'anamanfrondias@gmail.com',
         cellphone: 'Iphone',
         data:  '5 maio,  2024',
@@ -70,12 +70,11 @@ const pessoas = [
     </main>
 </template>
 <style scoped>
+
 main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
-    
 }
-
 p {
    
     color: #3F3F3F;
@@ -86,9 +85,9 @@ p {
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    width: 88vw;
     border-radius: 10px;
     margin-bottom: 16vh;
+    margin-left: 13vw;
 }
 ul {
     display: flex;
@@ -96,7 +95,6 @@ ul {
     justify-content: flex-start;
     padding: 0;
 }
-
 li {
     display: flex;;
     align-items: center;
@@ -107,44 +105,50 @@ li {
     padding: 1vh 3vw 0 0;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
-
 .nome-email {
     display: flex;
     flex-direction: column;
     margin: 1vh 4vw;
-    width: 26vw;
+    width: 25.5vw;
 }
 .name{
-   font-weight: 700;
-   font-size: 2.25vh;
+   font-weight: 600;
+   font-size: 2.2vh;
 }
 .email{
     font-size: 1.8vh;
     color: #3F3F3F;
+}
+.valor{
+     width: 4.5vw;
+     justify-content: center;
+     align-items: center;
+     display: flex;
 }
 .data{
      width: 16.5vw;
      justify-content: center;
      align-items: center;
      display: flex;
-     margin-left: 2vw;
 }
 .data p{
-    font-size: 1vw;
+    font-size: 0.82vw;
 }
 .status{
     width: 13.5vw;
     justify-content: flex-start;
     align-items: center;
     display: flex;
-    margin-left: 4vw;
 }
 .status p{
     font-size: 1vw;
-    font-weight: 550;
+    margin-left: 40px;
+}
+#colorStatus{
+    color: #076510;
 }
 .botao{
-    width: 16.5vw;
+    width: 12vw;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -157,14 +161,15 @@ button p {
     margin-left: 5vw;
     font-size: 2vh;
     color: #3F3F3F;
-    font-weight: 900;
+    font-weight: 700;
 }
 .cellphone{
     margin-left: 2vw;
-    width: 13vw;
+    width: 8vw;
 }
 .cellphone p{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1vw;
+    width: 13vw;
 }
 </style>
