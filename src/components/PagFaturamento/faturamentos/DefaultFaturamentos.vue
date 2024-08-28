@@ -33,7 +33,7 @@ const pessoas = [
         email: 'guilhermeschreiber@gmail.com',
         tipo: 'Cliente',
         data: '1 maio,  2024',
-        valor: 50
+        valor: 50.00
     }
 ];
 </script>
@@ -83,8 +83,8 @@ const pessoas = [
                         <p class="email">{{ pessoa.tipo }}</p>
                     </div>
                     <div class="status">
-                        <p v-if="pessoa.valor < 0" id="cor-negativo">R$ {{ pessoa.valor }}</p>
-                        <p v-else id="cor-positivo">R$ +{{ pessoa.valor }}</p>
+                        <p v-if="pessoa.valor < 0" id="cor-negativo">R$ {{ pessoa.valor.toFixed(2).replace('.',',') }}</p>
+                        <p v-else id="cor-positivo">R$ +{{ pessoa.valor.toFixed(2).replace('.',',')}}</p>
                     </div>
                     <div class="data">
                         <p>{{ pessoa.data }}</p>
@@ -147,16 +147,14 @@ p {
 }
 .entrada p{
     color: #076510;
-    margin-left: 20px;
 }
 .saida p{
     color: #650707;
-    margin-left: 20px;
 }
 .total p{
     color: #012340;
-    margin-left: 20px;
-    margin-left: 70px;
+    display: flex;
+    justify-content: center;
 }
 .texto-centro{
     text-align: center;
@@ -169,7 +167,7 @@ li {
     border-radius: 10px;
     width: 66vw;
     margin: 1vh 0;
-    padding: 1vh 3vw 0 0;
+   justify-content: center;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
 
