@@ -53,12 +53,16 @@ input {
   height: 35px;
   padding: 10px;
   text-indent: 25px;
+  margin-bottom: 18px;
 }
 
 input[type='email'] {
   margin-bottom: 18px;
 }
 
+input[type='password'] {
+  margin-bottom: 0px;
+}
 
 input::placeholder {
   font-weight: bold;
