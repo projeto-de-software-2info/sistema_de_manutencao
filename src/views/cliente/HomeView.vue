@@ -4,4 +4,6 @@ import DefaultHomeCliente from '@/components/Home/DefaultHomeCliente.vue'
 <template>
   <DefaultHomeCliente />
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
