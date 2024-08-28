@@ -73,9 +73,6 @@ const router = createRouter({
         }
 
       ]
-    }
-
-      ],
     },
     {
       path: '/cliente',
@@ -83,7 +80,7 @@ const router = createRouter({
       children: [
         {
           path: '/homeCliente',
-          name: 'homee',
+          name: 'home',
           component: () => import('../views/cliente/HomeView.vue')
         },
         {
@@ -108,6 +105,8 @@ const router = createRouter({
         }
       ],
     },
-)
+
+  ]
+})
 
 export default router
