@@ -35,7 +35,7 @@ function salvar(info) {
   if (dados.value.adm == true) {
     router.push('/home')
   } else {
-    router.push('/oii')
+    router.push('/homeCliente')
   }
 }
 </script>

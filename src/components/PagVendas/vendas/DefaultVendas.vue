@@ -1,44 +1,44 @@
 <script setup>
-const pessoas = [
+const vendas = [
     {
         id: 1,
         name: 'Júlia Fuck',
         email: 'juliaifc22@gmail.com',
-        cellphone: 'Iphone',
-        data:  '5 maio,  2024',
-        status: 'Aprovado'
+        valor: 'R$ 50,00',
+        data: '1 maio,  2024',
+        status: 'Entregue'
     },
     {
         id: 2,
-        name: 'Rafaela Barbieri',
+        name: 'Rafaela Barbieri da Cruz',
         email: 'rafaelabarbieric@gmail.com',
-        cellphone: 'Motorola',
-        data:  '5 maio,  2024',
-        status: 'Em avaliação'
+        valor: 'R$ 50,00',
+        data: '1 maio,  2024',
+        status: 'Entregue'
     },
     {
         id: 3,
-        name: 'Ana Laura Dias',
+        name: 'Ana Laura Manfrom Dias',
         email: 'anamanfrondias@gmail.com',
-        cellphone: 'Iphone',
-        data:  '5 maio,  2024',
-        status: 'Aprovado'
+        valor: 'R$ 50,00',
+        data: '1 maio,  2024',
+        status: 'Entregue'
     },
     {
         id: 4,
         name: 'Isabelli Luísa Rosa',
         email: 'isabelli.ifc@gmail.com',
-        cellphone: 'Samsung',
-        data:  '5 maio,  2024',
-        status: 'Em avaliação'
+        valor: 'R$ 50,00',
+        data: '1 maio,  2024',
+        status: 'Entregue'
     },
     {
         id: 5,
         name: 'Guilherme Schreiber',
-        email: 'guilhermeschreiber@gmail.com',
-        cellphone: 'Xiaomi',
-        data:  '5 maio,  2024',
-        status: 'Reprovado'
+        email: 'guilhermeschreiber2007@gmail.com',
+        valor: 'R$ 50,00',
+        data: '1 maio,  2024',
+        status: 'Entregue'
     }
 ];
 </script>
@@ -47,22 +47,22 @@ const pessoas = [
         <div class="container">
 
             <ul>
-                <li v-for="pessoa in pessoas" :key="pessoa.id">
+                <li v-for="venda in vendas" :key="venda.id">
                     <div class="nome-email">
-                        <p class="name">{{ pessoa.name }}</p>
-                        <p class="email">{{ pessoa.email }}</p>
+                        <p class="name">{{ venda.name }}</p>
+                        <p class="email">{{ venda.email }}</p>
                     </div>
-                    <div class="cellphone">
-                        <p>{{ pessoa.cellphone }}</p>
+                    <div class="valor">
+                        <p class="valor">{{ venda.valor }}</p>
                     </div>
                     <div class="data">
-                        <p>{{ pessoa.data }}</p>
+                        <p>{{ venda.data }}</p>
                     </div>
                     <div class="status">
-                        <p>{{ pessoa.status }}</p>
+                        <p id="colorStatus">{{ venda.status }}</p>
                     </div>
                     <div class="botao">
-                        <Button><p>. . .</p></Button>
+                        <Button><p>ver mais</p></Button>
                     </div>
                 </li>
             </ul>
@@ -70,7 +70,6 @@ const pessoas = [
     </main>
 </template>
 <style scoped>
-
 main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
@@ -87,7 +86,7 @@ p {
     align-items: center;
     border-radius: 10px;
     margin-bottom: 16vh;
-    margin-left: 13vw;
+    margin-left: 20vw;
 }
 ul {
     display: flex;
@@ -95,6 +94,7 @@ ul {
     justify-content: flex-start;
     padding: 0;
 }
+
 li {
     display: flex;;
     align-items: center;
@@ -105,6 +105,7 @@ li {
     padding: 1vh 3vw 0 0;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
+
 .nome-email {
     display: flex;
     flex-direction: column;
@@ -113,7 +114,7 @@ li {
 }
 .name{
    font-weight: 600;
-   font-size: 2.2vh;
+   font-size: 2,2vh;
 }
 .email{
     font-size: 1.8vh;
@@ -148,7 +149,7 @@ li {
     color: #076510;
 }
 .botao{
-    width: 12vw;
+    width: 16.5vw;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -162,14 +163,5 @@ button p {
     font-size: 2vh;
     color: #3F3F3F;
     font-weight: 700;
-}
-.cellphone{
-    margin-left: 2vw;
-    width: 8vw;
-}
-.cellphone p{
-    font-weight: 400;
-    font-size: 1vw;
-    width: 13vw;
 }
 </style>

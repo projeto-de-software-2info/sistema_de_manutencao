@@ -2,43 +2,43 @@
 const pessoas = [
     {
         id: 1,
-        name: 'Júlia Fuck',
-        email: 'juliaifc22@gmail.com',
-        cellphone: 'Iphone',
-        data:  '5 maio,  2024',
-        status: 'Aprovado'
+        name: 'Marcos Autopeças ',
+        email: 'marcospecas@gmail.com',
+        CNPJ: '12.345.678/0001-00',
+        CEP:  '89212202',
+        produtos: 'Ver produtos'
     },
     {
         id: 2,
-        name: 'Rafaela Barbieri',
-        email: 'rafaelabarbieric@gmail.com',
-        cellphone: 'Motorola',
-        data:  '5 maio,  2024',
-        status: 'Em avaliação'
+        name: 'Marcos Autopeças ',
+        email: 'marcospecas@gmail.com',
+        CNPJ: '12.345.678/0001-00',
+        CEP:  '89212202',
+        produtos: 'Ver produtos'
     },
     {
         id: 3,
-        name: 'Ana Laura Dias',
-        email: 'anamanfrondias@gmail.com',
-        cellphone: 'Iphone',
-        data:  '5 maio,  2024',
-        status: 'Aprovado'
+        name: 'Marcos Autopeças ',
+        email: 'marcospecas@gmail.com',
+        CNPJ: '12.345.678/0001-00',
+        CEP:  '89212202',
+        produtos: 'Ver produtos'
     },
     {
         id: 4,
-        name: 'Isabelli Luísa Rosa',
-        email: 'isabelli.ifc@gmail.com',
-        cellphone: 'Samsung',
-        data:  '5 maio,  2024',
-        status: 'Em avaliação'
+        name: 'Marcos Autopeças',
+        email: 'marcospecas@gmail.com',
+        CNPJ: '12.345.678/0001-00',
+        CEP:  '89212202',
+        produtos: 'Ver produtos'
     },
     {
         id: 5,
-        name: 'Guilherme Schreiber',
-        email: 'guilhermeschreiber@gmail.com',
-        cellphone: 'Xiaomi',
-        data:  '5 maio,  2024',
-        status: 'Reprovado'
+        name: 'Marcos Autopeças',
+        email: 'marcospecas@gmail.com',
+        CNPJ: '12.345.678/0001-00',
+        CEP:  '89212202',
+        produtos: 'Ver produtos'
     }
 ];
 </script>
@@ -52,14 +52,14 @@ const pessoas = [
                         <p class="name">{{ pessoa.name }}</p>
                         <p class="email">{{ pessoa.email }}</p>
                     </div>
-                    <div class="cellphone">
-                        <p>{{ pessoa.cellphone }}</p>
+                    <div class="cnpj">
+                        <p>{{ pessoa.CNPJ }}</p>
                     </div>
-                    <div class="data">
-                        <p>{{ pessoa.data }}</p>
+                    <div class="cep">
+                        <p>{{ pessoa.CEP }}</p>
                     </div>
-                    <div class="status">
-                        <p>{{ pessoa.status }}</p>
+                    <div class="produtos">
+                        <p>{{ pessoa.produtos }}</p>
                     </div>
                     <div class="botao">
                         <Button><p>. . .</p></Button>
@@ -70,11 +70,11 @@ const pessoas = [
     </main>
 </template>
 <style scoped>
-
 main {
     display: flex;
     background-color: rgba(243, 243, 243, 1);
 }
+
 p {
    
     color: #3F3F3F;
@@ -87,7 +87,7 @@ p {
     align-items: center;
     border-radius: 10px;
     margin-bottom: 16vh;
-    margin-left: 13vw;
+    margin-left: 20vw;
 }
 ul {
     display: flex;
@@ -95,6 +95,7 @@ ul {
     justify-content: flex-start;
     padding: 0;
 }
+
 li {
     display: flex;;
     align-items: center;
@@ -105,50 +106,44 @@ li {
     padding: 1vh 3vw 0 0;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
+
 .nome-email {
     display: flex;
     flex-direction: column;
     margin: 1vh 4vw;
-    width: 25.5vw;
+    width: 26vw;
 }
 .name{
-   font-weight: 600;
-   font-size: 2.2vh;
+   font-weight: 700;
+   font-size: 2.25vh;
 }
 .email{
     font-size: 1.8vh;
     color: #3F3F3F;
 }
-.valor{
-     width: 4.5vw;
-     justify-content: center;
-     align-items: center;
-     display: flex;
-}
-.data{
+.cep{
      width: 16.5vw;
      justify-content: center;
      align-items: center;
      display: flex;
+     margin-left: 2vw;
 }
-.data p{
-    font-size: 0.82vw;
+.cep p{
+    font-size: 1.1vw;
 }
-.status{
+.produtos{
     width: 13.5vw;
     justify-content: flex-start;
     align-items: center;
     display: flex;
+    margin-left: 4vw;
 }
-.status p{
+.produtos p{
     font-size: 1vw;
-    margin-left: 40px;
-}
-#colorStatus{
-    color: #076510;
+    font-weight: 550;
 }
 .botao{
-    width: 12vw;
+    width: 16.5vw;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -161,15 +156,15 @@ button p {
     margin-left: 5vw;
     font-size: 2vh;
     color: #3F3F3F;
-    font-weight: 700;
+    font-weight: 900;
 }
-.cellphone{
+.cnpj{
     margin-left: 2vw;
-    width: 8vw;
+    width: 10vw;
 }
-.cellphone p{
+.cnpj p{
     font-weight: 400;
     font-size: 1vw;
     width: 13vw;
 }
-</style>
+</style>    

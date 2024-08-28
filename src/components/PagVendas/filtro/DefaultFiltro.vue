@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const filtros = ref(['Ativos', 'Mais recentes']);
+const filtros = ref(['filtro 1', 'filtro 2', 'filtro 3']);
 function remover(index) {
     filtros.value.splice(index, 1)
 }
@@ -27,8 +27,8 @@ function remover(index) {
     align-items: center;
     width: 66vw;
     border-radius: 10px;
+    margin: 0 0 0 12vw;
     justify-content: space-between;
-    margin-left: 6vw;
 }
 
 .filtros {
