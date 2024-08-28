@@ -1,7 +1,7 @@
 <script setup>
-import DefaultHome from '@/components/Home/DefaultHome.vue'
+import DefaultHomeCliente from '@/components/Home/DefaultHomeCliente.vue'
 </script>
 <template>
-  <DefaultHome />
+  <DefaultHomeCliente />
 </template>
 <style scoped></style>
