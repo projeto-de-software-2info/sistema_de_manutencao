@@ -1,8 +1,8 @@
 <script setup>
-   import DefaultPaginfo from '@/components/PagInfo/DefaultPaginfo.vue';
+   import DefaultServicoCliente from '@/components/PagServicoCliente/DefaultPagServicoCliente.vue';
 </script>
 <template>
-  <DefaultPaginfo />
+  <DefaultServicoCliente />
 </template>
 <style scoped>
 </style>
