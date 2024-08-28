@@ -128,7 +128,7 @@ li {
 }
 .tipo p{
     font-weight: 500;
-    font-size: 2,2vh;
+    font-size: 1vw;
 }
 .quantidade{
      width: 16.5vw;
