@@ -5,6 +5,7 @@ const email = ref("emailcompleto@gmail.com");
 const cep = ref("89212-202");
 const endereco = ref("Rua Areia Branca, 450");
 const telefone = ref("(47) 99132-8181");
+const editarPerfil = ref(true)
 </script>
 <template>
   <div class="header">
@@ -36,14 +37,59 @@ const telefone = ref("(47) 99132-8181");
         <span class="information-title">Telefone</span>
         <span>{{ telefone }}</span>
       </div>
-      <button class="edite">
+      <button @click="editarPerfil=true" class="edite">
         <img class="lapis-img" src="@/assets/imagens/lapis.png" width="15px" />edite seu
         perfil
       </button>
     </div>
   </main>
+  <div class="editarPerfil" v-if="editarPerfil">
+    <div class="container">
+      <div class="perfil-information">
+        <div class="information">
+          <span class="information-title">Nome</span>
+          <input v-model="nome"></input>
+        </div>
+        <div class="information">
+          <span class="information-title">Email</span>
+          <input v-model="email"></input>
+        </div>
+        <div class="information">
+          <span class="information-title">Cep</span>
+          <input v-model="cep"></input>
+        </div>
+        <div class="information">
+          <span class="information-title">Endereço</span>
+          <input v-model="endereco"></input>
+        </div>
+        <div class="information">
+          <span class="information-title">Telefone</span>
+          <input v-model="telefone"></input>
+        </div>
+        <button @click="editarPerfil=false" class="edite">
+          edite
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 <style scoped>
+.container{
+  width: 40vw;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.editarPerfil{
+  width: 100vw;
+  top:30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
 .lapis-img {
   margin: 5px;
 }

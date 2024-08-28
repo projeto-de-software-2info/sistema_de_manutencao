@@ -1,5 +1,5 @@
 <script setup>
-import DefaultPerfil from "@/components/perfil/DefaultPerfil.vue";
+import DefaultPerfil from "@/components/Perfil/DefaultPerfil.vue";
 </script>
 <template>
   <DefaultPerfil />
