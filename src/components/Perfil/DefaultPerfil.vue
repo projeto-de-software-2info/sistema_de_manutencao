@@ -44,8 +44,9 @@ const editarPerfil = ref(true)
     </div>
   </main>
   <div class="editarPerfil" v-if="editarPerfil">
+      <span  @click="editarPerfil=false" class="fechar">x</span>
     <div class="container">
-      <div class="perfil-information">
+      <div class="perfil-information-edit">
         <div class="information">
           <span class="information-title">Nome</span>
           <input v-model="nome"></input>
@@ -67,24 +68,37 @@ const editarPerfil = ref(true)
           <input v-model="telefone"></input>
         </div>
         <button @click="editarPerfil=false" class="edite">
-          edite
+          confirmar
         </button>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
+.fechar{
+  top:0vh;
+  margin-left: 35vw;
+  position: absolute;
+  z-index:2;
+}
+.information input{
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
 .container{
   width: 40vw;
-  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: aliceblue;
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .editarPerfil{
   width: 100vw;
-  top:30vh;
+  top:20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,12 +140,20 @@ main {
   justify-content: space-around;
   flex-direction: column;
   width: 60%;
+  padding: 20px;
   margin-left: 3vw;
+}
+.perfil-information-edit {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 80%;
+  padding: 20px;
 }
 .information {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .information-title {
   font-weight: bold;
