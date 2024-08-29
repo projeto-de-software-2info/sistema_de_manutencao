@@ -30,7 +30,7 @@ function estilo(type) {
           <small v-if="field.type == 'password'">Esqueceu a senha?</small>
           <div v-if="field.type == 'checkbox'" class="checkbox">{{ field.nome }}</div>
         </div>
-        <ButtonForm :titulo="$route.fullPath == '/' ? 'Entrar' : 'Cadastrar'" />
+        <ButtonForm :titulo="$route.fullPath == '/' ? 'Entrar' : $route.fullPath == '/cadastro/relatorios' ? 'Gerar Relatório':'Cadastrar'" />
       </form>
     </div>
   </div>
