@@ -80,6 +80,11 @@ const router = createRouter({
           path: '/cadastro/fornecedores',
           name: 'cadastroFornecedores',
           component: () => import('../views/cadastros/CadastroFornecedoresView.vue')
+        },
+        {
+          path: '/cadastro/pecas',
+          name: 'cadastroPecas',
+          component: () => import('../views/cadastros/CadastroPecasView.vue')
         }
       ]
     },
@@ -95,23 +100,22 @@ const router = createRouter({
         {
           path: '/servicosCliente',
           name: 'servicosCliente',
-          component: () => import('../views/cliente/ServicosView.vue'),
+          component: () => import('../views/cliente/ServicosView.vue')
         },
         {
           path: '/orcamentosCliente',
           name: 'orcamentosCliente',
-          component: () => import('../views/cliente/OrcamentosView.vue'),
+          component: () => import('../views/cliente/OrcamentosView.vue')
         },
         {
           path: '/produtosCliente',
           name: 'produtosCliente',
-          component: () => import('../views/cliente/ProdutosView.vue'),
+          component: () => import('../views/cliente/ProdutosView.vue')
         },
         {
           path: '/perfilCliente',
           name: 'perfilCliente',
-          component: () => import('../views/cliente/PerfilView.vue'),
-
+          component: () => import('../views/cliente/PerfilView.vue')
         }
       ]
     }
