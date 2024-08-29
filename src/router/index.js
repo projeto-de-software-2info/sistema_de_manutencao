@@ -65,8 +65,32 @@ const router = createRouter({
           path: '/perfil',
           name: 'perfil',
           component: () => import('../views/PerfilView.vue')
+        },
+        {
+          path: '/cadastro/clientes',
+          name: 'cadastroCliente',
+          component: () => import('../views/cadastros/CadastroClienteView.vue')
+        },
+        {
+          path: '/cadastro/orcamentos',
+          name: 'cadastroOrcamentos',
+          component: () => import('../views/cadastros/CadastroOrcamentoView.vue')
+        },
+        {
+          path: '/cadastro/fornecedores',
+          name: 'cadastroFornecedores',
+          component: () => import('../views/cadastros/CadastroFornecedoresView.vue')
+        },
+        {
+          path: '/cadastro/pecas',
+          name: 'cadastroPecas',
+          component: () => import('../views/cadastros/CadastroPecasView.vue')
+        },
+        {
+          path: '/cadastro/acessorios',
+          name: 'cadastroAcessorios',
+          component: () => import('../views/cadastros/CadastroAcessoriosView.vue')
         }
-
       ]
     },
     {
@@ -75,32 +99,31 @@ const router = createRouter({
       children: [
         {
           path: '/homeCliente',
-          name: 'home',
+          name: 'homeCliente',
           component: () => import('../views/cliente/HomeView.vue')
         },
         {
           path: '/servicosCliente',
-          name: 'servicos',
-          component: () => import('../views/cliente/ServicosView.vue'),
+          name: 'servicosCliente',
+          component: () => import('../views/cliente/ServicosView.vue')
         },
         {
           path: '/orcamentosCliente',
-          name: 'orcamentos',
-          component: () => import('../views/cliente/OrcamentosView.vue'),
+          name: 'orcamentosCliente',
+          component: () => import('../views/cliente/OrcamentosView.vue')
         },
         {
           path: '/produtosCliente',
-          name: 'produtos',
-          component: () => import('../views/cliente/ProdutosView.vue'),
+          name: 'produtosCliente',
+          component: () => import('../views/cliente/ProdutosView.vue')
         },
         {
           path: '/perfilCliente',
-          name: 'perfil',
-          component: () => import('../views/cliente/PerfilView.vue'),
+          name: 'perfilCliente',
+          component: () => import('../views/cliente/PerfilView.vue')
         }
-      ],
-    },
-
+      ]
+    }
   ]
 })
 
