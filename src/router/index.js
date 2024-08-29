@@ -75,6 +75,11 @@ const router = createRouter({
           path: '/cadastro/orcamentos',
           name: 'cadastroOrcamentos',
           component: () => import('../views/cadastros/CadastroOrcamentoView.vue')
+        },
+        {
+          path: '/cadastro/fornecedores',
+          name: 'cadastroFornecedores',
+          component: () => import('../views/cadastros/CadastroFornecedoresView.vue')
         }
       ]
     },
