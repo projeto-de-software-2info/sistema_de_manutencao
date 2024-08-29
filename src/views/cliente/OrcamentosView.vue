@@ -1,8 +1,10 @@
 <script setup>
-   import DefaultPagOrcamento from '@/components/PagOrcamento/DefaultPagOrcamento.vue';
+   import DefaultOrcamentoCliente from '@/components/PagOrcamento/DefaultOrcamentoCliente.vue';
 </script>
 <template>
-  <DefaultPagOrcamento />
+  <main>
+  <DefaultOrcamentoCliente />
+</main>
 </template>
 <style scoped>
 </style>

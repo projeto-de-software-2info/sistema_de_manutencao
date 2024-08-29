@@ -15,7 +15,7 @@ function estilo(type) {
 </script>
 <template>
   <div class="sair" v-if="$route.fullPath != '/'" @click="router.back()">X</div>
-  <div>
+  <div class="content-form">
     <h1>{{ props.titulo }}</h1>
     <div class="form">
       <form @submit.prevent="$emit('enviar', formdata)" validate>
@@ -39,6 +39,11 @@ function estilo(type) {
 <style scoped>
 * {
   font-weight: bold;
+}
+.content-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sair {
@@ -90,6 +95,7 @@ h1 {
   font-size: 60px;
   text-align: center;
   margin-bottom: 55px;
+  display: flex;
 }
 
 .form {

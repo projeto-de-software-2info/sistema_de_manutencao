@@ -2,43 +2,43 @@
 const vendas = [
     {
         id: 1,
-        name: 'Júlia Fuck',
-        email: 'juliaifc22@gmail.com',
-        valor: 'R$ 50,00',
-        data: '1 maio,  2024',
-        status: 'Entregue'
+        produto: 'Capinha Rosa A53',
+        loja: 'Mobile Tech',
+        tipo: 'Acessório',
+        quantidade: '5 unidades',
+        valor: 'R$ 25,50'
     },
     {
         id: 2,
-        name: 'Rafaela Barbieri da Cruz',
-        email: 'rafaelabarbieric@gmail.com',
-        valor: 'R$ 50,00',
-        data: '1 maio,  2024',
-        status: 'Entregue'
+        produto: 'Capinha Rosa A53',
+        loja: 'Mobile Tech',
+        tipo: 'Acessório',
+        quantidade: '5 unidades',
+        valor: 'R$ 25,50'
     },
     {
         id: 3,
-        name: 'Ana Laura Manfrom Dias',
-        email: 'anamanfrondias@gmail.com',
-        valor: 'R$ 50,00',
-        data: '1 maio,  2024',
-        status: 'Entregue'
+        produto: 'Capinha Rosa A53',
+        loja: 'Mobile Tech',
+        tipo: 'Acessório',
+        quantidade: '5 unidades',
+        valor: 'R$ 25,50'
     },
     {
         id: 4,
-        name: 'Isabelli Luísa Rosa',
-        email: 'isabelli.ifc@gmail.com',
-        valor: 'R$ 50,00',
-        data: '1 maio,  2024',
-        status: 'Entregue'
+        produto: 'Capinha Rosa A53',
+        loja: 'Mobile Tech',
+        tipo: 'Acessório',
+        quantidade: '5 unidades',
+        valor: 'R$ 25,50'
     },
     {
         id: 5,
-        name: 'Guilherme Schreiber',
-        email: 'guilhermeschreiber2007@gmail.com',
-        valor: 'R$ 50,00',
-        data: '1 maio,  2024',
-        status: 'Entregue'
+        produto: 'Capinha Rosa A53',
+        loja: 'Mobile Tech',
+        tipo: 'Acessório',
+        quantidade: '5 unidades',
+        valor: 'R$ 25,50'
     }
 ];
 </script>
@@ -48,21 +48,21 @@ const vendas = [
 
             <ul>
                 <li v-for="venda in vendas" :key="venda.id">
-                    <div class="nome-email">
-                        <p class="name">{{ venda.name }}</p>
-                        <p class="email">{{ venda.email }}</p>
+                    <div class="produto-loja">
+                        <p class="produto">{{ venda.produto }}</p>
+                        <p class="loja">{{ venda.loja }}</p>
+                    </div>
+                    <div class="tipo">
+                        <p class="valor">{{ venda.tipo }}</p>
+                    </div>
+                    <div class="quantidade">
+                        <p>{{ venda.quantidade }}</p>
                     </div>
                     <div class="valor">
-                        <p class="valor">{{ venda.valor }}</p>
-                    </div>
-                    <div class="data">
-                        <p>{{ venda.data }}</p>
-                    </div>
-                    <div class="status">
-                        <p id="colorStatus">{{ venda.status }}</p>
+                        <p>{{ venda.valor }}</p>
                     </div>
                     <div class="botao">
-                        <Button><p>ver mais</p></Button>
+                        <Button><p>. . .</p></Button>
                     </div>
                 </li>
             </ul>
@@ -106,47 +106,48 @@ li {
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
 
-.nome-email {
+.produto-loja {
     display: flex;
     flex-direction: column;
-    margin: 1vh 4vw;
+    margin: 1vh 3vw;
     width: 25.5vw;
 }
-.name{
+.produto{
    font-weight: 600;
    font-size: 2,2vh;
 }
-.email{
+.loja{
     font-size: 1.8vh;
     color: #3F3F3F;
 }
-.valor{
+.tipo{
      width: 4.5vw;
      justify-content: center;
      align-items: center;
      display: flex;
 }
-.data{
+.tipo p{
+    font-weight: 500;
+    font-size: 1vw;
+}
+.quantidade{
      width: 16.5vw;
      justify-content: center;
      align-items: center;
      display: flex;
 }
-.data p{
-    font-size: 0.82vw;
+.quantidade p{
+    font-size: 1vw;
 }
-.status{
+.valor{
     width: 13.5vw;
     justify-content: flex-start;
     align-items: center;
     display: flex;
 }
-.status p{
+.valor p{
     font-size: 1vw;
     margin-left: 40px;
-}
-#colorStatus{
-    color: #076510;
 }
 .botao{
     width: 16.5vw;
@@ -162,6 +163,6 @@ button p {
     margin-left: 5vw;
     font-size: 2vh;
     color: #3F3F3F;
-    font-weight: 600;
+    font-weight: 900;
 }
 </style>

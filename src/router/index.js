@@ -70,8 +70,17 @@ const router = createRouter({
           path: '/cadastro/clientes',
           name: 'cadastroCliente',
           component: () => import('../views/cadastros/CadastroClienteView.vue')
+        },
+        {
+          path: '/cadastro/orcamentos',
+          name: 'cadastroOrcamentos',
+          component: () => import('../views/cadastros/CadastroOrcamentoView.vue')
+        },
+        {
+          path: '/cadastro/fornecedores',
+          name: 'cadastroFornecedores',
+          component: () => import('../views/cadastros/CadastroFornecedoresView.vue')
         }
-
       ]
     },
     {
@@ -102,10 +111,10 @@ const router = createRouter({
           path: '/perfilCliente',
           name: 'perfilCliente',
           component: () => import('../views/cliente/PerfilView.vue'),
-        }
-      ],
-    },
 
+        }
+      ]
+    }
   ]
 })
 
