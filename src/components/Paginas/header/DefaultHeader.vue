@@ -1,18 +1,14 @@
 <script setup>
-    import AddButton from './ButtonAdd.vue';
-    import BarraPesquisa from './PesquisaBar.vue';
-    import { defineProps } from 'vue';
-
-    const props = defineProps({
-        title: {
-            type: String,
-            default: 'Orçamentos', 
-         },
-});
+    import AddButton from './AddButton/AddButton.vue';
+    import BarraPesquisa from './barraPesquisa/BarraPesquisa.vue';
+    
+    defineProps({
+        titulo: String
+    })
 </script>
 <template>
     <div class="header">
-        <p>{{ props.title }}</p>
+        <p>{{ titulo }}</p>
         <div class="container">
         <BarraPesquisa />
         <AddButton />
@@ -26,11 +22,10 @@
         align-items: center;
         background-color: rgba(200, 200, 200, 0.18);
         padding: 3%;
-        margin: 7.338vh 6.25vw 0 20vw;
+        margin: 7.338vh 6.25vw 0 26vw;
         border-radius: 10px;
         width: 66vw;
         height: 14.4vh;
-        
     }
    
     p {

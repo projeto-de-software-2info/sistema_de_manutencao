@@ -1,12 +1,12 @@
 <script setup>
-        import DefaultHeader from './titulo/DefaultHeader.vue';
+       import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
         import DefaultFiltro from './filtro/DefaultFiltro.vue';
         import DefaultFaturamentos from './faturamentos/DefaultFaturamentos.vue';
 </script>
 
 <template>
     <main>
-        <DefaultHeader />
+        <DefaultHeader titulo="Faturamento"/>
         <DefaultFiltro /> 
         <DefaultFaturamentos />
     </main>

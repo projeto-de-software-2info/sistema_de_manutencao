@@ -1,12 +1,12 @@
 <script setup>
-        import HeaderOrcamento from './titulo/HeaderOrcamento.vue';
+          import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
         import FiltroOrcamento from './filtro/FiltroOrcamento.vue';
         import InfoVisaoCliente from './cliente/InfoVisaoCliente.vue';
 </script>
 
 <template>
     <main>
-        <HeaderOrcamento />
+        <DefaultHeader titulo="Orçamento" />
         <FiltroOrcamento /> 
         <InfoVisaoCliente />
     </main>

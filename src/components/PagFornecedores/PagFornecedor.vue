@@ -1,5 +1,5 @@
 <script setup>
-    import DefaultHeader from './titulo/DefaultHeader.vue';
+    import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
     import FiltroFornecedor from './filtro/FiltroFornecedor.vue';
     import InfoFornecedor from './fornecedor/InfoFornecedor.vue';
 </script>

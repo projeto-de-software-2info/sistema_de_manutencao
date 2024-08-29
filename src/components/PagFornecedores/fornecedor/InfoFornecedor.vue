@@ -114,7 +114,7 @@ li {
     width: 26vw;
 }
 .name{
-   font-weight: 700;
+   font-weight: 600;
    font-size: 2.25vh;
 }
 .email{
