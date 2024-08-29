@@ -1,19 +1,19 @@
 <script setup>
-          import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
-        import FiltroOrcamento from './filtro/FiltroOrcamento.vue';
-        import InfoVisaoCliente from './cliente/InfoVisaoCliente.vue';
+import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
+import PaginaFiltro from '../Paginas/Filtros/PaginaFiltro.vue'
+import InfoVisaoCliente from './cliente/InfoVisaoCliente.vue'
 </script>
 
 <template>
-    <main>
-        <DefaultHeader titulo="Orçamento" />
-        <FiltroOrcamento /> 
-        <InfoVisaoCliente />
-    </main>
+  <main>
+    <DefaultHeader titulo="Orçamento" />
+    <PaginaFiltro />
+    <InfoVisaoCliente />
+  </main>
 </template>
 
 <style scoped>
-  main {
+   main {
     display: flex;
     flex-direction: column;
     justify-content: center;

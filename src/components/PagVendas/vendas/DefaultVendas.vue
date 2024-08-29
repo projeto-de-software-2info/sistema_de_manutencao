@@ -75,35 +75,34 @@ main {
     background-color: rgba(243, 243, 243, 1);
 }
 p {
-   
     color: #3F3F3F;
     font-family: "Poppins", sans-serif;
 }
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 16vh;
-    margin-left: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 16vh;
+  margin-left: 20vw;
 }
 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
 }
 
 li {
-    display: flex;;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 10px;
-    width: 66vw;
-    margin: 1vh 0;
-    padding: 1vh 3vw 0 0;
-    box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  width: 66vw;
+  margin: 1vh 0;
+  padding: 1vh 3vw 0 0;
+  box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
 
 .nome-email {
@@ -114,10 +113,10 @@ li {
 }
 .name{
    font-weight: 600;
-   font-size: 2,2vh;
+   font-size: 16px;
 }
 .email{
-    font-size: 1.8vh;
+    font-size: 14px;
     color: #3F3F3F;
 }
 .valor{
@@ -133,7 +132,7 @@ li {
      display: flex;
 }
 .data p{
-    font-size: 0.82vw;
+    font-size: 14px;
 }
 .status{
     width: 13.5vw;
@@ -142,8 +141,9 @@ li {
     display: flex;
 }
 .status p{
-    font-size: 1vw;
+    font-size: 14px;
     margin-left: 40px;
+    font-weight: 600;
 }
 #colorStatus{
     color: #076510;
@@ -160,7 +160,7 @@ button{
 }
 button p {
     margin-left: 5vw;
-    font-size: 2vh;
+    font-size: 14px;
     color: #3F3F3F;
     font-weight: 600;
 }

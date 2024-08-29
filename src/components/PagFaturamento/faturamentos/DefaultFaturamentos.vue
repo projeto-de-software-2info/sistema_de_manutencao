@@ -179,10 +179,10 @@ li {
 }
 .name{
    font-weight: 600;
-   font-size: 2,2vh;
+   font-size: 16px;
 }
 .email{
-    font-size: 1.8vh;
+    font-size: 14px;
     color: #3F3F3F;
 }
 .data{
@@ -192,7 +192,7 @@ li {
      display: flex;
 }
 .data p{
-    font-size: 0.82vw;
+    font-size: 14px;
 }
 .status{
     width: 13.5vw;
@@ -201,7 +201,7 @@ li {
     display: flex;
 }
 .status p{
-    font-size: 1vw;
+    font-size: 14px;
     margin-left: 40px;
 }
 #cor-negativo{

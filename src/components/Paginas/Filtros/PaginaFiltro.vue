@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
-const filtros = ref(['filtro 1', 'filtro 2', 'filtro 3']);
+
+const filtros = ref(['Ativo', 'Mais recentes']);
 function remover(index) {
     filtros.value.splice(index, 1)
 }
@@ -15,8 +16,6 @@ function remover(index) {
                 </li>
             </ul>
         </div>
-        <div class="listaFiltros">
-        </div>
     </div>
 </template>
 <style scoped>
@@ -27,17 +26,14 @@ function remover(index) {
     align-items: center;
     width: 66vw;
     border-radius: 10px;
+    margin: 0 0 0 12vw;
     justify-content: space-between;
-    margin-left: 14vw;
 }
 
 .filtros {
     display: flex;
 }
-.listaFiltros {
-    display: flex;
-    align-items: center;
-}
+
 polygon{
     width: 1vw;
     height: 1vh;
@@ -52,13 +48,12 @@ select{
     border: none;
     border-radius: 10px;
     margin: 0 0 0 0.5vw;
-
 }
 p {
     font-size: 2.5vh;
     color: rgba(56, 92, 125, 1);
     font-family: "Poppins", sans-serif;
-    margin: 1.9vh 0 1vh 0;
+    margin: 1.9vh 0 1vh 4vw;
 }
 
 ul {
@@ -78,6 +73,8 @@ li {
     border-radius: 10px;
     text-align: center;
     box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
+    display: flex;
+    align-items: center;
 }
 
 button {
@@ -89,7 +86,6 @@ button {
     width: 2.6vh;
     margin-left: 1vw;
     border-radius: 100%;
-
 }
 
 button:hover {

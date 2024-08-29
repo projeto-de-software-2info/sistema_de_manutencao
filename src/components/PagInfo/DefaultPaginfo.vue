@@ -1,13 +1,13 @@
 <script setup>
         import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
-        import DefaultFiltro from './filtro/DefaultFiltro.vue';
+        import PaginaFiltro from '../Paginas/Filtros/PaginaFiltro.vue'
         import DefaultInfoCliente from './cliente/DefaultInfoCliente.vue';
 </script>
 
 <template>
     <main>
        <DefaultHeader titulo="Serviços"/>
-        <DefaultFiltro /> 
+        <PaginaFiltro/> 
         <DefaultInfoCliente />
     </main>
 </template>

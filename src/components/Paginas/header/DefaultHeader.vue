@@ -3,7 +3,9 @@
     import BarraPesquisa from './barraPesquisa/BarraPesquisa.vue';
     
     defineProps({
-        titulo: String
+        titulo:{
+            type: String,
+        }
     })
 </script>
 <template>
