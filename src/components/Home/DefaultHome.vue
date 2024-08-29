@@ -14,7 +14,7 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
         <ContainerInformations number="134" type="clientes" />
         <ContainerInformations number="36" type="fornecedores" />
       </div>
-      <div class="containers">
+      <div class="containers dados">
         <div class="clientes">
           <span class="titulo-principal">PRINCIPAIS CLIENTES</span>
           <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
@@ -88,4 +88,14 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
   width: 60vw;
   margin: 30px 0px;
 }
+@media screen (mix-width:1200px){
+  .dados {
+  height:800px;
+}
+.graficos {
+  height:800px;
+}
+}
+
+
 </style>
