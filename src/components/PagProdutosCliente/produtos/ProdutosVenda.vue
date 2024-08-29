@@ -186,6 +186,7 @@ img {
     align-items: center;
     width: 100%;
     margin: 3vh 0 0 0;
+    padding: 5px;
     
 }
 
