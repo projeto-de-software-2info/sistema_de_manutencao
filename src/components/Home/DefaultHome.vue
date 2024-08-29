@@ -24,9 +24,9 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
           <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
         </div>
         <div class="graficos">
-          <HomeGraphs :image="GraficoFaturamento"/>
+          <HomeGraphs :image="GraficoFaturamento" />
           <div class="alinhar-fim">
-            <HomeGraphs :image="GraficoEntradaSaida"/>
+            <HomeGraphs :image="GraficoEntradaSaida" />
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
 <style scoped>
 #div {
   display: flex;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 .main {
   min-height: 100vh;
@@ -51,7 +51,7 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
   display: flex;
   flex-direction: column;
   height: 480px;
-  align-content: end
+  align-content: end;
 }
 .alinhar-fim {
   display: flex;
@@ -64,12 +64,14 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 2px solid #DEDEDE;
+  border: 2px solid #dedede;
   background-color: rgb(255, 255, 255);
   height: 480px;
   width: 28vw;
   border-radius: 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .titulo-principal {
   font-weight: 700;
@@ -88,14 +90,18 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
   width: 60vw;
   margin: 30px 0px;
 }
-@media screen (mix-width:1200px){
+@media (width >= 1650px) {
+  .titulo-principal{
+    margin-top:60px ;
+  }
+  .clientes{
+    height: 550px;
+  }
   .dados {
-  height:800px;
+    height: 550px;
+  }
+  .graficos {
+    height: 550px;
+  }
 }
-.graficos {
-  height:800px;
-}
-}
-
-
 </style>
