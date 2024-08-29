@@ -85,6 +85,11 @@ const router = createRouter({
           path: '/cadastro/pecas',
           name: 'cadastroPecas',
           component: () => import('../views/cadastros/CadastroPecasView.vue')
+        },
+        {
+          path: '/cadastro/acessorios',
+          name: 'cadastroAcessorios',
+          component: () => import('../views/cadastros/CadastroAcessoriosView.vue')
         }
       ]
     },
