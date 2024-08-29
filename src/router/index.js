@@ -80,27 +80,27 @@ const router = createRouter({
       children: [
         {
           path: '/homeCliente',
-          name: 'home',
+          name: 'homeCliente',
           component: () => import('../views/cliente/HomeView.vue')
         },
         {
           path: '/servicosCliente',
-          name: 'servicos',
+          name: 'servicosCliente',
           component: () => import('../views/cliente/ServicosView.vue'),
         },
         {
           path: '/orcamentosCliente',
-          name: 'orcamentos',
+          name: 'orcamentosCliente',
           component: () => import('../views/cliente/OrcamentosView.vue'),
         },
         {
           path: '/produtosCliente',
-          name: 'produtos',
+          name: 'produtosCliente',
           component: () => import('../views/cliente/ProdutosView.vue'),
         },
         {
           path: '/perfilCliente',
-          name: 'perfil',
+          name: 'perfilCliente',
           component: () => import('../views/cliente/PerfilView.vue'),
         }
       ],
