@@ -5,7 +5,7 @@ const email = ref("emailcompleto@gmail.com");
 const cep = ref("89212-202");
 const endereco = ref("Rua Areia Branca, 450");
 const telefone = ref("(47) 99132-8181");
-const editarPerfil = ref(true)
+const editarPerfil = ref(false)
 </script>
 <template>
   <div class="header">
