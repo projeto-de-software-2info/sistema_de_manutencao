@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const filtros = ref(['filtro 1', 'filtro 2', 'filtro 3']);
+const filtros = ref(['Peças', 'Acessórios', 'Principais compras']);
 function remover(index) {
     filtros.value.splice(index, 1)
 }

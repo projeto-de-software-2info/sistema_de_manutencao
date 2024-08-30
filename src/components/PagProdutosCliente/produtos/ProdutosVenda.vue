@@ -182,12 +182,11 @@ img {
 }
 .quant-comprar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 3vh 0 0 0;
+    margin: 2vh 0 0 0;
     padding: 5px;
-    
 }
 
 .quantidade {
@@ -195,8 +194,8 @@ img {
   justify-content: space-around;
   align-items: center;
   margin: 0 0 0 0;
-  width: 4.5vw;
-  height: 5.7vh;
+  width: 4vw;
+  height: 5.5vh;
   border-radius: 15px;
   border: 2px solid rgba(63, 63, 63, 1);
 }
@@ -215,7 +214,7 @@ button {
 }
 
 p {
-  font-size: 2.5vh;
+  font-size: 16px;
   color: rgba(56, 92, 125, 1);
   font-family: 'Poppins', sans-serif;
   margin: 0 0 0 0;
@@ -226,17 +225,15 @@ button p {
     font-family: 'Poppins', sans-serif;
     margin: 0 0 0 0;
 }
-
-
 .comprar {
-  font-size: 17px;
+  font-size: 14px;
   color: rgb(253, 253, 253);
   background-color: rgba(1, 35, 64, 1);
   font-family: 'Poppins', sans-serif;
-  margin: 0 0;
+  margin: 0 0 0 0.5vw;
   font-weight: 600;
-    padding: 8px 15px;
-    width: 9vw;
-    border-radius: 14px;
+  padding: 8px 15px;
+  width: 7vw;
+  border-radius: 14px;
 }
 </style>
