@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+const edit = ref(false)
 const pessoas = [
   {
     id: 1,
@@ -80,7 +82,13 @@ const pessoas = [
             <p>{{ pessoa.data }}</p>
           </div>
           <div class="botao">
-            <Button><p>. . .</p></Button>
+            <Button v-if="edit">
+            <img class="edit-icons" src="@/assets/imagens/read.png" height="15"/>
+            <img class="edit-icons" src="@/assets/imagens/edit.png" height="15"/>
+            <img class="edit-icons" src="@/assets/imagens/delete.png" height="15"/>
+            <img class="edit-icons close"  @click="edit = false" src="@/assets/imagens/fechar2.png" height="12"/>
+            </Button>
+            <Button v-else @click="edit = true"><p>. . .</p></Button>
           </div>
         </li>
       </ul>
@@ -93,6 +101,14 @@ const pessoas = [
   </main>
 </template>
 <style scoped>
+.edit-icons{
+  height:12px;
+  margin:5px;
+}
+.close{
+    height:10px;
+  margin-left:18px; 
+}
 main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);

@@ -1,83 +1,102 @@
 <script setup>
+import { ref } from "vue";
+const edit = ref(false);
 const vendas = [
-    {
-        id: 1,
-        produto: 'Capinha Rosa A53',
-        loja: 'Mobile Tech',
-        tipo: 'Acessório',
-        quantidade: '5 unidades',
-        valor: 'R$ 25,50'
-    },
-    {
-        id: 2,
-        produto: 'Capinha Rosa A53',
-        loja: 'Mobile Tech',
-        tipo: 'Acessório',
-        quantidade: '5 unidades',
-        valor: 'R$ 25,50'
-    },
-    {
-        id: 3,
-        produto: 'Capinha Rosa A53',
-        loja: 'Mobile Tech',
-        tipo: 'Acessório',
-        quantidade: '5 unidades',
-        valor: 'R$ 25,50'
-    },
-    {
-        id: 4,
-        produto: 'Capinha Rosa A53',
-        loja: 'Mobile Tech',
-        tipo: 'Acessório',
-        quantidade: '5 unidades',
-        valor: 'R$ 25,50'
-    },
-    {
-        id: 5,
-        produto: 'Capinha Rosa A53',
-        loja: 'Mobile Tech',
-        tipo: 'Acessório',
-        quantidade: '5 unidades',
-        valor: 'R$ 25,50'
-    }
+  {
+    id: 1,
+    produto: "Capinha Rosa A53",
+    loja: "Mobile Tech",
+    tipo: "Acessório",
+    quantidade: "5 unidades",
+    valor: "R$ 25,50",
+  },
+  {
+    id: 2,
+    produto: "Capinha Rosa A53",
+    loja: "Mobile Tech",
+    tipo: "Acessório",
+    quantidade: "5 unidades",
+    valor: "R$ 25,50",
+  },
+  {
+    id: 3,
+    produto: "Capinha Rosa A53",
+    loja: "Mobile Tech",
+    tipo: "Acessório",
+    quantidade: "5 unidades",
+    valor: "R$ 25,50",
+  },
+  {
+    id: 4,
+    produto: "Capinha Rosa A53",
+    loja: "Mobile Tech",
+    tipo: "Acessório",
+    quantidade: "5 unidades",
+    valor: "R$ 25,50",
+  },
+  {
+    id: 5,
+    produto: "Capinha Rosa A53",
+    loja: "Mobile Tech",
+    tipo: "Acessório",
+    quantidade: "5 unidades",
+    valor: "R$ 25,50",
+  },
 ];
 </script>
 <template>
-    <main>
-        <div class="container">
-
-            <ul>
-                <li v-for="venda in vendas" :key="venda.id">
-                    <div class="produto-loja">
-                        <p class="produto">{{ venda.produto }}</p>
-                        <p class="loja">{{ venda.loja }}</p>
-                    </div>
-                    <div class="tipo">
-                        <p class="valor">{{ venda.tipo }}</p>
-                    </div>
-                    <div class="quantidade">
-                        <p>{{ venda.quantidade }}</p>
-                    </div>
-                    <div class="valor">
-                        <p>{{ venda.valor }}</p>
-                    </div>
-                    <div class="botao">
-                        <Button><p>. . .</p></Button>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </main>
+  <main>
+    <div class="container">
+      <ul>
+        <li v-for="venda in vendas" :key="venda.id">
+          <div class="produto-loja">
+            <p class="produto">{{ venda.produto }}</p>
+            <p class="loja">{{ venda.loja }}</p>
+          </div>
+          <div class="tipo">
+            <p class="valor">{{ venda.tipo }}</p>
+          </div>
+          <div class="quantidade">
+            <p>{{ venda.quantidade }}</p>
+          </div>
+          <div class="valor">
+            <p>{{ venda.valor }}</p>
+          </div>
+          <div class="botao">
+            <Button v-if="edit">
+              <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
+              <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
+              <img class="edit-icons" src="@/assets/imagens/delete.png" height="15" />
+              <img
+                class="edit-icons close"
+                @click="edit = false"
+                src="@/assets/imagens/fechar2.png"
+                height="12"
+              />
+            </Button>
+            <Button v-else @click="edit = true"><p>. . .</p></Button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
 </template>
 <style scoped>
+.edit-icons {
+  height: 12px;
+  margin: 5px;
+}
+.close {
+  height: 10px;
+  margin-left: 18px;
+}
 main {
-    display: flex;
-    background-color: rgba(243, 243, 243, 1);
+  display: flex;
+  background-color: rgba(243, 243, 243, 1);
 }
 p {
-   
-    color: #3F3F3F;
-    font-family: "Poppins", sans-serif;
+  color: #3f3f3f;
+  font-family: "Poppins", sans-serif;
 }
 .container {
   display: flex;

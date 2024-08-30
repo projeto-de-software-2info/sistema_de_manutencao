@@ -20,5 +20,6 @@ nav {
   height: 100vh;
   position: fixed;
   padding: 50px;
+  top:0;
 }
 </style>

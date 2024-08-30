@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from "vue";
+const edit = ref(false);
 const pessoas = [
   {
     id: 1,
@@ -53,7 +55,21 @@ const pessoas = [
             <p>{{ pessoa.status }}</p>
           </div>
           <div class="botao">
-            <Button><p>. . .</p></Button>
+  
+
+            <Button v-if="edit">
+              <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
+              <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
+              <img class="edit-icons" src="@/assets/imagens/delete.png" height="15" />
+              <img
+                class="edit-icons close"
+                @click="edit = false"
+                src="@/assets/imagens/fechar2.png"
+                height="12"
+              />
+            </Button>
+            <Button v-else @click="edit = true"><p>. . .</p></Button>
+
           </div>
         </li>
       </ul>
@@ -61,6 +77,14 @@ const pessoas = [
   </main>
 </template>
 <style scoped>
+.edit-icons {
+  height: 12px;
+  margin: 5px;
+}
+.close {
+  height: 10px;
+  margin-left: 18px;
+}
 main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
@@ -68,6 +92,7 @@ main {
 
 p {
   color: #3f3f3f;
+
   font-family: 'Poppins', sans-serif;
 }
 .container {
@@ -77,7 +102,6 @@ p {
   align-items: center;
   border-radius: 10px;
   margin-bottom: 16vh;
-  margin-left: 20vw;
 }
 ul {
   display: flex;
@@ -113,6 +137,15 @@ li {
 }
 .data {
   width: 18vw;
+=======
+  font-size: 2, 2vh;
+}
+.email {
+  font-size: 1.8vh;
+  color: #3f3f3f;
+}
+.data {
+  width: 16.5vw;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -122,6 +155,10 @@ li {
 }
 .status {
   width: 15vw;
+  font-size: 0.82vw;
+}
+.status {
+  width: 13.5vw;
   justify-content: flex-start;
   align-items: center;
   display: flex;
