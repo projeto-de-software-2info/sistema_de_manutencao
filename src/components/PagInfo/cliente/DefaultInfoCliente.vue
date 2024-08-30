@@ -4,40 +4,40 @@ const edit = ref(false);
 const pessoas = [
   {
     id: 1,
-    name: "Júlia Fuck",
-    email: "juliaifc22@gmail.com",
-    data: "1 maio,  2024  até  5 maio,  2024",
-    status: "Finalizado",
+    name: 'Júlia Fuck',
+    email: 'juliaifc22@gmail.com',
+    data: '1 maio,  2024  até  5 maio,  2024',
+    status: 'Finalizado'
   },
   {
     id: 2,
-    name: "Rafaela Barbieri da Cruz",
-    email: "rafaelabarbieric@gmail.com",
-    data: "1 maio,  2024  até  5 maio,  2024",
-    status: "Em progresso",
+    name: 'Rafaela Barbieri da Cruz',
+    email: 'rafaelabarbieric@gmail.com',
+    data: '1 maio,  2024  até  5 maio,  2024',
+    status: 'Em progresso'
   },
   {
     id: 3,
-    name: "Ana Laura Manfrom Dias",
-    email: "anamanfrondias@gmail.com",
-    data: "1 maio,  2024  até  5 maio,  2024",
-    status: "Finalizado",
+    name: 'Ana Laura Manfrom Dias',
+    email: 'anamanfrondias@gmail.com',
+    data: '1 maio,  2024  até  5 maio,  2024',
+    status: 'Finalizado'
   },
   {
     id: 4,
-    name: "Isabelli Luísa Rosa",
-    email: "isabelli.ifc@gmail.com",
-    data: "1 maio,  2024  até  5 maio,  2024",
-    status: "Em progresso",
+    name: 'Isabelli Luísa Rosa',
+    email: 'isabelli.ifc@gmail.com',
+    data: '1 maio,  2024  até  5 maio,  2024',
+    status: 'Em progresso'
   },
   {
     id: 5,
-    name: "Guilherme Schreiber",
-    email: "guilhermeschreiber2007@gmail.com",
-    data: "1 maio,  2024  até  5 maio,  2024",
-    status: "Finalizado",
-  },
-];
+    name: 'Guilherme Schreiber',
+    email: 'guilhermeschreiber2007@gmail.com',
+    data: '1 maio,  2024  até  5 maio,  2024',
+    status: 'Finalizado'
+  }
+]
 </script>
 <template>
   <main>
@@ -55,6 +55,8 @@ const pessoas = [
             <p>{{ pessoa.status }}</p>
           </div>
           <div class="botao">
+  
+
             <Button v-if="edit">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
               <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
@@ -67,6 +69,7 @@ const pessoas = [
               />
             </Button>
             <Button v-else @click="edit = true"><p>. . .</p></Button>
+
           </div>
         </li>
       </ul>
@@ -85,12 +88,12 @@ const pessoas = [
 main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
-  margin-left: 40vw;
 }
 
 p {
   color: #3f3f3f;
-  font-family: "Poppins", sans-serif;
+
+  font-family: 'Poppins', sans-serif;
 }
 .container {
   display: flex;
@@ -99,6 +102,7 @@ p {
   align-items: center;
   border-radius: 10px;
   margin-bottom: 16vh;
+  margin-left: 20vw;
 }
 ul {
   display: flex;
@@ -113,7 +117,7 @@ li {
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 10px;
   width: 66vw;
-  margin: 1vh 0 0 13.5vw;
+  margin: 1vh 0;
   padding: 1vh 3vw 0 0;
   box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
@@ -121,11 +125,21 @@ li {
 .nome-email {
   display: flex;
   flex-direction: column;
-  margin: 1vh 4vw;
-  width: 25.5vw;
+  margin: 1vh 0vw 1vh 4vw;
+  width: 20vw;
 }
 .name {
   font-weight: 600;
+  font-size: 16px;
+  width: max-content;
+}
+.email {
+  font-size: 14px;
+  color: #3f3f3f;
+  width: max-content;
+}
+.data {
+  width: 18vw;
   font-size: 2, 2vh;
 }
 .email {
@@ -139,6 +153,10 @@ li {
   display: flex;
 }
 .data p {
+    font-size: 14px;
+}
+.status {
+  width: 15vw;
   font-size: 0.82vw;
 }
 .status {
@@ -148,11 +166,12 @@ li {
   display: flex;
 }
 .status p {
-  font-size: 1vw;
-  margin-left: 40px;
+font-size: 14px;
+  margin-left: 60px;
+  font-weight: 600;
 }
 .botao {
-  width: 16.5vw;
+  width: max-content;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -162,8 +181,9 @@ button {
   background-color: rgba(255, 255, 255, 0.75);
 }
 button p {
+  width: max-content;
   margin-left: 5vw;
-  font-size: 2vh;
+  font-size: 14px;
   color: #3f3f3f;
   font-weight: 900;
 }

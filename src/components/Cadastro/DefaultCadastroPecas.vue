@@ -4,42 +4,29 @@ import { ref } from 'vue'
 import router from '@/router'
 
 const dados = ref({
-  nomePeca: '',
-  cnpjFornecedor: '',
-  preco: '',
-  descricao: '',
-  usada: ''
+  servico: '',
+  dataInicial: '',
+  dataFinal: ''
 })
 
 const fields = [
   {
     type: 'string',
-    placeholder: 'nome da peça',
-    value: 'nomePeca',
+    placeholder: 'conversão em serviço',
+    value: 'servico',
     required: 'true'
   },
   {
-    type: 'number',
-    placeholder: 'CNPJ do fornecedor',
-    value: 'cnpjFornecedor',
+    type: 'date',
+    placeholder: 'data inicial',
+    value: 'dataInicial',
     required: 'true'
   },
   {
-    type: 'number',
-    placeholder: 'preço',
-    value: 'preco',
+    type: 'date',
+    placeholder: 'data Final',
+    value: 'dataFinal',
     required: 'true'
-  },
-  {
-    type: 'string',
-    placeholder: 'descrição',
-    value: 'descricao',
-    required: 'true'
-  },
-  {
-    type: 'checkbox',
-    value: 'usada',
-    nome: 'peça usada'
   }
 ]
 
@@ -55,7 +42,7 @@ function salvar(info) {
 <template>
   <main>
     <section class="login-form">
-      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Peças" />
+      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Relatório" />
     </section>
   </main>
 </template>
