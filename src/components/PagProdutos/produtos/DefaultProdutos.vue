@@ -126,62 +126,62 @@ li {
 }
 
 .produto-loja {
-  display: flex;
-  flex-direction: column;
-  margin: 1vh 3vw;
-  width: 25.5vw;
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 3vw;
+    width: 25.5vw;
 }
-.produto {
-  font-weight: 600;
-  font-size: 2, 2vh;
+.produto{
+   font-weight: 600;
+   font-size: 16px;
 }
-.loja {
-  font-size: 1.8vh;
-  color: #3f3f3f;
+.loja{
+    font-size: 14px;
+    color: #3F3F3F;
 }
-.tipo {
-  width: 4.5vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.tipo{
+     width: 4.5vw;
+     justify-content: center;
+     align-items: center;
+     display: flex;
 }
-.tipo p {
-  font-weight: 500;
-  font-size: 1vw;
+.tipo p{
+    font-weight: 500;
+    font-size: 14px;
 }
-.quantidade {
-  width: 16.5vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.quantidade{
+     width: 16.5vw;
+     justify-content: center;
+     align-items: center;
+     display: flex;
 }
-.quantidade p {
-  font-size: 1vw;
+.quantidade p{
+    font-size: 14px;
 }
-.valor {
-  width: 13.5vw;
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
+.valor{
+    width: 13.5vw;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
 }
-.valor p {
-  font-size: 1vw;
-  margin-left: 40px;
+.valor p{
+    font-size: 14px;
+    margin-left: 40px;
 }
-.botao {
-  width: 16.5vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.botao{
+    width: 16.5vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-button {
-  border: none;
-  background-color: rgba(255, 255, 255, 0.75);
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 button p {
-  margin-left: 5vw;
-  font-size: 2vh;
-  color: #3f3f3f;
-  font-weight: 900;
+    margin-left: 5vw;
+    font-size: 16px;
+    color: #3F3F3F;
+    font-weight: 900;
 }
 </style>

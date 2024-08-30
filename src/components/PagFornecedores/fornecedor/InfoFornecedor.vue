@@ -96,8 +96,9 @@ main {
 }
 
 p {
-  color: #3f3f3f;
-  font-family: "Poppins", sans-serif;
+
+    color: #3F3F3F;
+    font-family: "Poppins", sans-serif;
 }
 .container {
   display: flex;
@@ -127,49 +128,50 @@ li {
 }
 
 .nome-email {
-  display: flex;
-  flex-direction: column;
-  margin: 1vh 4vw;
-  width: 26vw;
+
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 4vw;
+    width: 26vw;
 }
-.name {
-  font-weight: 700;
-  font-size: 2.25vh;
+.name{
+   font-weight: 600;
+   font-size: 16px;
 }
-.email {
-  font-size: 1.8vh;
-  color: #3f3f3f;
+.email{
+    font-size: 14px;
+    color: #3F3F3F;
 }
-.cep {
-  width: 16.5vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin-left: 2vw;
+.cep{
+     width: 16.5vw;
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     margin-left: 2vw;
 }
-.cep p {
-  font-size: 1.1vw;
+.cep p{
+    font-size: 14px;
 }
-.produtos {
-  width: 13.5vw;
-  justify-content: flex-start;
-  align-items: center;
-  display: flex;
-  margin-left: 4vw;
+.produtos{
+    width: 13.5vw;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    margin-left: 4vw;
 }
-.produtos p {
-  font-size: 1vw;
-  font-weight: 550;
+.produtos p{
+    font-size: 14px;
+    font-weight: 550;
 }
-.botao {
-  width: 16.5vw;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.botao{
+    width: 16.5vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-button {
-  border: none;
-  background-color: rgba(255, 255, 255, 0.75);
+button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 button p {
   margin-left: 5vw;
