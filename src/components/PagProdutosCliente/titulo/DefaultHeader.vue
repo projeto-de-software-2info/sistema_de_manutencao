@@ -4,7 +4,7 @@
 <template>
     <main>
         <div class="carrinho">
-            <img src="C:\Users\guilh\OneDrive\Documentos\sistema_de_manutencao\src\assets\imagens\carrinho.png" alt="carrinho" />
+            <img src="@\assets\imagens\carrinho.png" alt="carrinho" />
         </div>
             <div class="header">
                 <p>Produtos</p>
