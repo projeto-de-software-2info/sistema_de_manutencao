@@ -13,10 +13,11 @@ import InfoFornecedor from './fornecedor/InfoFornecedor.vue'
 </template>
 <style scoped>
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(243, 243, 243, 1);
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 243, 243, 1);
+    height: 100vh;
+    }
 </style>

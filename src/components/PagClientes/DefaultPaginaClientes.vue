@@ -13,12 +13,12 @@ import PaginaFiltro from '../Paginas/Filtros/PaginaFiltro.vue'
   </main>
 </template>
 <style scoped>
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(243, 243, 243, 1);
-}
+ main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 243, 243, 1);
+    height: 100vh;
+    }
 </style>
