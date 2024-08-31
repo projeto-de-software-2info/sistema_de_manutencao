@@ -92,6 +92,11 @@ const router = createRouter({
           component: () => import('../views/cadastros/CadastroAcessoriosView.vue')
         },
         {
+          path: '/cadastro/produtos',
+          name: 'cadastroProdutos',
+          component: () => import('../views/cadastros/CadastroProdutosView.vue')
+        },
+        {
           path: '/cadastro/relatorios',
           name: 'cadastroRelatorio',
           component: () => import('../views/cadastros/CadastroRelatoriosView.vue')
