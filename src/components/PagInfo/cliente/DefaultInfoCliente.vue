@@ -93,7 +93,7 @@ main {
 p {
   color: #3f3f3f;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .container {
   display: flex;
@@ -102,12 +102,14 @@ p {
   align-items: center;
   border-radius: 10px;
   margin-bottom: 16vh;
+  margin-left: 20vw;
 }
 ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding: 0;
+  margin: 1vh 0;
 }
 
 li {
@@ -124,20 +126,21 @@ li {
 .nome-email {
   display: flex;
   flex-direction: column;
-  margin: 1vh 4vw;
-  width: 25.5vw;
+  margin: 1vh 0vw 1vh 4vw;
+  width: 20vw;
 }
 .name {
   font-weight: 600;
   font-size: 16px;
+  width: max-content;
 }
 .email {
   font-size: 14px;
   color: #3f3f3f;
+  width: max-content;
 }
 .data {
   width: 18vw;
-=======
   font-size: 2, 2vh;
 }
 .email {
@@ -151,7 +154,7 @@ li {
   display: flex;
 }
 .data p {
-    font-size: 14px;
+  font-size: 14px;
 }
 .status {
   width: 15vw;
@@ -164,12 +167,12 @@ li {
   display: flex;
 }
 .status p {
-font-size: 14px;
-  margin-left: 40px;
+  font-size: 14px;
+  margin-left: 60px;
   font-weight: 600;
 }
 .botao {
-  width: 16.5vw;
+  width: max-content;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -183,5 +186,6 @@ button p {
   font-size: 14px;
   color: #3f3f3f;
   font-weight: 900;
+  width: max-content;
 }
 </style>
