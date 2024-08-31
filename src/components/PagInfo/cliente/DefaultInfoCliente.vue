@@ -4,40 +4,40 @@ const edit = ref(false);
 const pessoas = [
   {
     id: 1,
-    name: 'Júlia Fuck',
-    email: 'juliaifc22@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    name: "Júlia Fuck",
+    email: "juliaifc22@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
   },
   {
     id: 2,
-    name: 'Rafaela Barbieri da Cruz',
-    email: 'rafaelabarbieric@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Em progresso'
+    name: "Rafaela Barbieri da Cruz",
+    email: "rafaelabarbieric@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Em progresso",
   },
   {
     id: 3,
-    name: 'Ana Laura Manfrom Dias',
-    email: 'anamanfrondias@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    name: "Ana Laura Manfrom Dias",
+    email: "anamanfrondias@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
   },
   {
     id: 4,
-    name: 'Isabelli Luísa Rosa',
-    email: 'isabelli.ifc@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Em progresso'
+    name: "Isabelli Luísa Rosa",
+    email: "isabelli.ifc@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Em progresso",
   },
   {
     id: 5,
-    name: 'Guilherme Schreiber',
-    email: 'guilhermeschreiber2007@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
-  }
-]
+    name: "Guilherme Schreiber",
+    email: "guilhermeschreiber2007@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
+  },
+];
 </script>
 <template>
   <main>
@@ -55,8 +55,6 @@ const pessoas = [
             <p>{{ pessoa.status }}</p>
           </div>
           <div class="botao">
-  
-
             <Button v-if="edit">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
               <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
@@ -69,7 +67,6 @@ const pessoas = [
               />
             </Button>
             <Button v-else @click="edit = true"><p>. . .</p></Button>
-
           </div>
         </li>
       </ul>
@@ -93,7 +90,7 @@ main {
 p {
   color: #3f3f3f;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .container {
   display: flex;
@@ -153,7 +150,7 @@ li {
   display: flex;
 }
 .data p {
-    font-size: 14px;
+  font-size: 14px;
 }
 .status {
   width: 15vw;
@@ -166,7 +163,7 @@ li {
   display: flex;
 }
 .status p {
-font-size: 14px;
+  font-size: 14px;
   margin-left: 60px;
   font-weight: 600;
 }
@@ -183,6 +180,7 @@ button {
 button p {
   width: max-content;
   margin-left: 5vw;
+  font-size: 14px;
   font-size: 14px;
   color: #3f3f3f;
   font-weight: 900;
