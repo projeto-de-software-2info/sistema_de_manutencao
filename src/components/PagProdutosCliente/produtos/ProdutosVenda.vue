@@ -5,7 +5,7 @@
       <div class="produto">
         <div class="imgProduto">
           <img
-            src="C:\Users\guilh\OneDrive\Documentos\sistema_de_manutencao\src\assets\imagens\capinhaIphone.png"
+            src="@\assets\imagens\capinhaIphone.png"
             alt="produto4"
           />
         </div>
@@ -29,7 +29,7 @@
       <div class="produto">
         <div class="imgProduto">
           <img
-            src="C:\Users\guilh\OneDrive\Documentos\sistema_de_manutencao\src\assets\imagens\bateriaIphone.png"
+            src="@\assets\imagens\bateriaIphone.png"
             alt="produto4"
           />
         </div>
@@ -53,7 +53,7 @@
       <div class="produto">
         <div class="imgProduto">
           <img
-            src="C:\Users\guilh\OneDrive\Documentos\sistema_de_manutencao\src\assets\imagens\pelicula.png"
+            src="@\assets\imagens\pelicula.png"
             alt="produto4"
           />
         </div>
@@ -78,7 +78,7 @@
         <div class="imgProduto">
           <img
             class="conector"
-            src="C:\Users\guilh\OneDrive\Documentos\sistema_de_manutencao\src\assets\imagens\placaConector.png"
+            src="@\assets\imagens\placaConector.png"
             alt="produto4"
           />
         </div>
