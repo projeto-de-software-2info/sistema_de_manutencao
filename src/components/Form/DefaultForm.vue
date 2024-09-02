@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import ButtonForm from './button/ButtonForm.vue'
 import InputForm from './input/InputForm.vue'
 import router from '@/router'
+import { useClientesStore } from '@/stores/clientes';
 const props = defineProps(['fields', 'dados', 'titulo'])
 const formdata = ref({ ...props.dados })
 function estilo(type) {
@@ -12,13 +13,19 @@ function estilo(type) {
     return 'content-input'
   }
 }
+const teste = useClientesStore()
+
+function cadastro(){
+  teste.adicionar(formdata.value)
+  router.back()
+}
 </script>
 <template>
   <div class="sair" v-if="$route.fullPath != '/'" @click="router.back()">X</div>
   <div class="content-form">
     <h1>{{ props.titulo }}</h1>
     <div class="form">
-      <form @submit.prevent="$emit('enviar', formdata)" validate>
+      <form @submit.prevent="cadastro()" validate>
         <div :class="[estilo(field.type)]" v-for="(field, index) in fields" :key="index">
           <div class="icon"></div>
           <InputForm

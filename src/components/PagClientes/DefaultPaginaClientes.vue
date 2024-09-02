@@ -19,6 +19,6 @@ import PaginaFiltro from '../Paginas/Filtros/PaginaFiltro.vue'
     justify-content: center;
     align-items: center;
     background-color: rgba(243, 243, 243, 1);
-    height: 100vh;
+ 
     }
 </style>

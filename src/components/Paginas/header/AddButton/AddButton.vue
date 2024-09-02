@@ -24,7 +24,7 @@ const rotasComCadastro = ["/clientes", "/orcamentos", "/fornecedores", "/produto
   align-items: center;
   height: 32px;
   width: 35px;
-  background-color: rgba(56, 92, 125, 1);
+  background-color: #385c7d;
   border-radius: 20px;
   position: relative;
 }

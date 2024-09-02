@@ -13,13 +13,13 @@ const fields = [
   {
     type: 'email',
     placeholder: 'email do cliente',
-    value: 'email',
+    value: 'emailCliente',
     required: 'true'
   },
   {
     type: 'string',
     placeholder: 'modelo do celular',
-    value: 'senha',
+    value: 'modeloCelular',
     required: 'true'
   },
   {
@@ -30,19 +30,12 @@ const fields = [
   }
 ]
 
-function salvar(info) {
-  dados.value = info
-  if (dados.value.adm == true) {
-    router.push('/home')
-  } else {
-    router.push('/oii')
-  }
-}
+
 </script>
 <template>
   <main>
     <section class="login-form">
-      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Orçamentos" />
+      <DefaultForm :fields="fields" :dados="dados" titulo="Orçamentos" />
     </section>
   </main>
 </template>

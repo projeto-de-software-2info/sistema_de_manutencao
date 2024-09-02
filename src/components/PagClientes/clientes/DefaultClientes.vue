@@ -1,64 +1,34 @@
 <script setup>
 import { ref } from 'vue'
+import { useClientesStore } from '@/stores/clientes';
 const edit = ref(false)
-const pessoas = [
-  {
-    id: 1,
-    name: 'Júlia Fuck',
-    email: 'juliaifc22@gmail.com',
-    orcamentos: 2,
-    vendas: 4,
-    servicos: 2,
-    data: ' 5 maio,  2024',
-    status: 'ativo'
-  },
-  {
-    id: 2,
-    name: 'Rafaela Barbieri da Cruz',
-    email: 'rafaelabarbieric@gmail.com',
-    orcamentos: 2,
-    vendas: 4,
-    servicos: 2,
-    data: ' 5 maio,  2024',
-    status: 'ativo'
-  },
-  {
-    id: 3,
-    name: 'Ana Laura Manfrom Dias',
-    email: 'anamanfrondias@gmail.com',
-    orcamentos: 2,
-    vendas: 4,
-    servicos: 2,
-    data: ' 5 maio,  2024',
-    status: 'ativo'
-  },
-  {
-    id: 4,
-    name: 'Isabelli Luísa Rosa',
-    email: 'isabelli.ifc@gmail.com',
-    orcamentos: 2,
-    vendas: 4,
-    servicos: 2,
-    data: '5 maio,  2024',
-    status: 'ativo'
-  },
-  {
-    id: 5,
-    name: 'Guilherme Schreiber',
-    email: 'guilhermeschreiber2007@gmail.com',
-    orcamentos: 2,
-    vendas: 4,
-    servicos: 2,
-    data: '5 maio,  2024',
-    status: 'ativo'
+const clientes = useClientesStore()
+const editar = ref(false)
+const idCliente = ref(null)
+const defaultCliente = { name: '', email: '' }
+const cliente = ref( {...defaultCliente})
+
+function opcoes(id) {
+  if (edit.value && idCliente.value == id) {
+    edit.value = false
+    idCliente.value = null
+  } else {
+    edit.value = true
+    idCliente.value = id
   }
-]
+}
+
+function editarCliente(){
+  clientes.updateCliente(idCliente.value, cliente.value)
+  editar.value = false
+  cliente.value = defaultCliente
+}
 </script>
 <template>
   <main>
     <div class="container">
       <ul>
-        <li v-for="pessoa in pessoas" :key="pessoa.id">
+        <li v-for="pessoa in clientes.clientes" :key="pessoa.id">
           <div class="nome-email">
             <p class="name">{{ pessoa.name }}</p>
             <p class="email">{{ pessoa.email }}</p>
@@ -82,16 +52,43 @@ const pessoas = [
             <p>{{ pessoa.data }}</p>
           </div>
           <div class="botao">
-            <Button v-if="edit">
-            <img class="edit-icons" src="@/assets/imagens/read.png" height="15"/>
-            <img class="edit-icons" src="@/assets/imagens/edit.png" height="15"/>
-            <img class="edit-icons" src="@/assets/imagens/delete.png" height="15"/>
-            <img class="edit-icons close"  @click="edit = false" src="@/assets/imagens/fechar2.png" height="12"/>
+            <Button v-if="edit && idCliente === pessoa.id">
+              <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
+              <img
+                class="edit-icons"
+                @click="editar = true"
+                src="@/assets/imagens/edit.png"
+                height="15"
+              />
+
+              <img
+                class="edit-icons"
+                @click="clientes.removeCliente(pessoa.id)"
+                src="@/assets/imagens/delete.png"
+                height="15"
+              />
+              <img
+                class="edit-icons close"
+                @click="opcoes(pessoa.id)"
+                src="@/assets/imagens/fechar2.png"
+                height="12"
+              />
             </Button>
-            <Button v-else @click="edit = true"><p>. . .</p></Button>
+            <Button v-else @click="opcoes(pessoa.id)"><p>. . .</p></Button>
           </div>
         </li>
       </ul>
+    </div>
+    <div v-if="editar" class="editar">
+      <div class="editar-titulo">
+        <h1>Editar</h1>
+        <span @click="editar = false">X</span>
+      </div>
+      <form  @submit.prevent="editarCliente()">
+        <input type="text" v-model="cliente.name" placeholder="nome" required/>
+        <input type="email" v-model="cliente.email" placeholder="email" required />
+        <button type="submit">Editar</button>
+      </form>
     </div>
     <div class="buttons">
       <div class="orcamento">Orçamentos</div>
@@ -101,18 +98,67 @@ const pessoas = [
   </main>
 </template>
 <style scoped>
-.edit-icons{
-  height:12px;
-  margin:5px;
+.edit-icons {
+  height: 12px;
+  margin: 5px;
 }
-.close{
-    height:10px;
-  margin-left:18px; 
+.close {
+  height: 10px;
+  margin-left: 18px;
 }
 main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
   margin-left: 6vw;
+}
+
+.editar {
+  position: absolute;
+  width: 15vw;
+  background-color: #385c7d;
+  padding: 30px;
+  top: 35vh;
+  margin-left: 12vw;
+  border-radius: 15px;
+}
+
+.editar form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editar input {
+  border-radius: 8px;
+  border: 1px solid #012340;
+  height: 35px;
+  padding: 5px;
+  text-indent: 25px;
+  margin-bottom: 18px;
+}
+
+.editar-titulo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.editar button {
+  height: 35px;
+  border-radius: 8px;
+  background-color: #ffffffbf;
+  cursor: pointer;
+  color: #385c7d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.editar span{
+  cursor: pointer;
 }
 
 .buttons {
@@ -134,29 +180,29 @@ p {
   font-family: 'Poppins', sans-serif;
 }
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    border-radius: 10px;
-    margin-bottom: 16vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 16vh;
 }
 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
 }
 
 li {
-    display: flex;;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 10px;
-    width: 66vw;
-    margin: 1vh 0 0 13.5vw;
-    padding: 1vh 3vw 0 0;
-    box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  width: 66vw;
+  margin: 1vh 0 0 13.5vw;
+  padding: 1vh 3vw 0 0;
+  box-shadow: 4px 4px 3.9px 0px rgba(183, 183, 183, 0.25);
 }
 
 .dados {
@@ -208,7 +254,7 @@ li {
   font-size: 16px;
 }
 .email {
-  font-size:14px;
+  font-size: 14px;
   color: #3f3f3f;
 }
 .data {
@@ -239,11 +285,13 @@ li {
 button {
   border: none;
   background-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
 }
 button p {
   margin-left: 5vw;
   font-size: 2vh;
   color: #3f3f3f;
   font-weight: 900;
+  cursor: pointer;
 }
 </style>
