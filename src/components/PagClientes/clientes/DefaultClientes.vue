@@ -1,12 +1,11 @@
 <script setup>
 import { ref } from 'vue'
-import { useClientesStore } from '@/stores/clientes';
+import { useClientesStore } from '@/stores/clientes'
+import EditarForm from '@/components/Form/editar/EditarForm.vue'
 const edit = ref(false)
 const clientes = useClientesStore()
 const editar = ref(false)
 const idCliente = ref(null)
-const defaultCliente = { name: '', email: '' }
-const cliente = ref( {...defaultCliente})
 
 function opcoes(id) {
   if (edit.value && idCliente.value == id) {
@@ -18,10 +17,10 @@ function opcoes(id) {
   }
 }
 
-function editarCliente(){
-  clientes.updateCliente(idCliente.value, cliente.value)
+function editarCliente(cliente) {
+  clientes.updateCliente(idCliente.value, cliente)
   editar.value = false
-  cliente.value = defaultCliente
+  cliente = ''
 }
 </script>
 <template>
@@ -84,11 +83,7 @@ function editarCliente(){
         <h1>Editar</h1>
         <span @click="editar = false">X</span>
       </div>
-      <form  @submit.prevent="editarCliente()">
-        <input type="text" v-model="cliente.name" placeholder="nome" required/>
-        <input type="email" v-model="cliente.email" placeholder="email" required />
-        <button type="submit">Editar</button>
-      </form>
+      <EditarForm @editar="editarCliente" />
     </div>
     <div class="buttons">
       <div class="orcamento">Orçamentos</div>
@@ -122,22 +117,7 @@ main {
   border-radius: 15px;
 }
 
-.editar form{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.editar input {
-  border-radius: 8px;
-  border: 1px solid #012340;
-  height: 35px;
-  padding: 5px;
-  text-indent: 25px;
-  margin-bottom: 18px;
-}
-
-.editar-titulo{
+.editar-titulo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,17 +127,7 @@ main {
   margin-bottom: 10px;
 }
 
-.editar button {
-  height: 35px;
-  border-radius: 8px;
-  background-color: #ffffffbf;
-  cursor: pointer;
-  color: #385c7d;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.editar span{
+.editar span {
   cursor: pointer;
 }
 
