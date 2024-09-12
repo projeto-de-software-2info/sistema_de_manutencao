@@ -1,15 +1,24 @@
 <script setup>
 import DefaultForm from '../Form/DefaultForm.vue'
 import { ref } from 'vue'
-import router from '@/router'
 
 const dados = ref({
-  emailCliente: '',
-  modeloCelular: '',
-  pecas: ''
+  id: '',
+  name: '',
+  email: '',
+  pecas: '',
+  cellphone: '',
+  data: '5 maio,  2024',
+  status: 'Aprovado'
 })
 
 const fields = [
+{
+    type: 'string',
+    placeholder: 'nome completo',
+    value: 'name',
+    required: 'true'
+  },
   {
     type: 'email',
     placeholder: 'email do cliente',
@@ -19,7 +28,7 @@ const fields = [
   {
     type: 'string',
     placeholder: 'modelo do celular',
-    value: 'senha',
+    value: 'cellphone',
     required: 'true'
   },
   {
@@ -30,19 +39,12 @@ const fields = [
   }
 ]
 
-function salvar(info) {
-  dados.value = info
-  if (dados.value.adm == true) {
-    router.push('/home')
-  } else {
-    router.push('/oii')
-  }
-}
+
 </script>
 <template>
   <main>
     <section class="login-form">
-      <DefaultForm :fields="fields" @enviar="salvar" :dados="dados" titulo="Orçamentos" />
+      <DefaultForm :fields="fields" :dados="dados" titulo="Orçamentos" />
     </section>
   </main>
 </template>

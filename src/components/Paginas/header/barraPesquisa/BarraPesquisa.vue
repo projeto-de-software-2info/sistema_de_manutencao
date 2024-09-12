@@ -11,7 +11,7 @@
 input {
     height: 4.6vh;
     width: 22vw;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: #ffffffbf;
     border: none;
     border-radius: 10px;
     font-size: 2.5vh;
