@@ -1,83 +1,81 @@
 <script setup>
 import { ref } from "vue";
-const edit = ref(false);
-const pessoas = [
-  {
-    id: 1,
-    name: "Marcos Autopeças ",
-    email: "marcospecas@gmail.com",
-    CNPJ: "12.345.678/0001-00",
-    CEP: "89212202",
-    produtos: "Ver produtos",
-  },
-  {
-    id: 2,
-    name: "Marcos Autopeças ",
-    email: "marcospecas@gmail.com",
-    CNPJ: "12.345.678/0001-00",
-    CEP: "89212202",
-    produtos: "Ver produtos",
-  },
-  {
-    id: 3,
-    name: "Marcos Autopeças ",
-    email: "marcospecas@gmail.com",
-    CNPJ: "12.345.678/0001-00",
-    CEP: "89212202",
-    produtos: "Ver produtos",
-  },
-  {
-    id: 4,
-    name: "Marcos Autopeças",
-    email: "marcospecas@gmail.com",
-    CNPJ: "12.345.678/0001-00",
-    CEP: "89212202",
-    produtos: "Ver produtos",
-  },
-  {
-    id: 5,
-    name: "Marcos Autopeças",
-    email: "marcospecas@gmail.com",
-    CNPJ: "12.345.678/0001-00",
-    CEP: "89212202",
-    produtos: "Ver produtos",
-  },
-];
+import { useFornecedoresStore } from "@/stores/fornecedores";
+import EditarForm from '@/components/Form/editar/EditarForm.vue'
+const edit = ref(false)
+const fornecedores = useFornecedoresStore()
+const editar = ref(false)
+const idFornecedor = ref(null)
+
+function opcoes(id) {
+  if (edit.value && idFornecedor.value == id) {
+    edit.value = false
+    idFornecedor.value = null
+  } else {
+    edit.value = true
+    idFornecedor.value = id
+  }
+}
+
+function editarFornecedor(fornecedor) {
+  fornecedores.updateFornecedor(idFornecedor.value, fornecedor)
+  editar.value = false
+  fornecedor = ''
+}
+
 </script>
 <template>
   <main>
     <div class="container">
       <ul>
-        <li v-for="pessoa in pessoas" :key="pessoa.id">
+        <li v-for="fornecedor in fornecedores.fornecedores" :key="fornecedor.id">
           <div class="nome-email">
-            <p class="name">{{ pessoa.name }}</p>
-            <p class="email">{{ pessoa.email }}</p>
+            <p class="name">{{ fornecedor.name }}</p>
+            <p class="email">{{ fornecedor.email }}</p>
           </div>
           <div class="cnpj">
-            <p>{{ pessoa.CNPJ }}</p>
+            <p>{{ fornecedor.CNPJ }}</p>
           </div>
           <div class="cep">
-            <p>{{ pessoa.CEP }}</p>
+            <p>{{ fornecedor.telefone }}</p>
           </div>
           <div class="produtos">
-            <p>{{ pessoa.produtos }}</p>
+            <p>{{ fornecedor.produtos }}</p>
           </div>
           <div class="botao">
-            <Button v-if="edit">
+            <Button v-if="edit && idFornecedor === fornecedor.id">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/delete.png" height="15" />
+              <img
+                class="edit-icons"
+                @click="editar = true"
+                src="@/assets/imagens/edit.png"
+                height="15"
+              />
+
+              <img
+                class="edit-icons"
+                @click="fornecedores.removeFornecedor(fornecedor.id)"
+                src="@/assets/imagens/delete.png"
+                height="15"
+              />
               <img
                 class="edit-icons close"
-                @click="edit = false"
+                @click="opcoes(fornecedor.id)"
                 src="@/assets/imagens/fechar2.png"
                 height="12"
               />
             </Button>
-            <Button v-else @click="edit = true"><p>. . .</p></Button>
+            <Button v-else @click="opcoes(fornecedor.id)"><p>. . .</p></Button>
           </div>
         </li>
       </ul>
+    </div>
+    <div v-if="editar" class="editar">
+      <div class="editar-titulo">
+        <h1>Editar</h1>
+        <span @click="editar = false">X</span>
+      </div>
+      <EditarForm @editar="editarFornecedor" />
     </div>
   </main>
 </template>
@@ -94,6 +92,31 @@ main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
 }
+
+.editar {
+  position: absolute;
+  width: 15vw;
+  background-color: #385c7d;
+  padding: 30px;
+  top: 35vh;
+  margin-left: 12vw;
+  border-radius: 15px;
+}
+
+.editar-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.editar span {
+  cursor: pointer;
+}
+
 
 p {
 

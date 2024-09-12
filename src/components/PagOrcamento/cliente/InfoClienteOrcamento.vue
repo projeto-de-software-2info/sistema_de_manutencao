@@ -1,83 +1,80 @@
 <script setup>
 import { ref } from "vue";
-const edit = ref(false);
-const pessoas = [
-  {
-    id: 1,
-    name: "Júlia Fuck",
-    email: "juliaifc22@gmail.com",
-    cellphone: "Iphone",
-    data: "5 maio,  2024",
-    status: "Aprovado",
-  },
-  {
-    id: 2,
-    name: "Rafaela Barbieri",
-    email: "rafaelabarbieric@gmail.com",
-    cellphone: "Motorola",
-    data: "5 maio,  2024",
-    status: "Em avaliação",
-  },
-  {
-    id: 3,
-    name: "Ana Laura Dias",
-    email: "anamanfrondias@gmail.com",
-    cellphone: "Iphone",
-    data: "5 maio,  2024",
-    status: "Aprovado",
-  },
-  {
-    id: 4,
-    name: "Isabelli Luísa Rosa",
-    email: "isabelli.ifc@gmail.com",
-    cellphone: "Samsung",
-    data: "5 maio,  2024",
-    status: "Em avaliação",
-  },
-  {
-    id: 5,
-    name: "Guilherme Schreiber",
-    email: "guilhermeschreiber@gmail.com",
-    cellphone: "Xiaomi",
-    data: "5 maio,  2024",
-    status: "Reprovado",
-  },
-];
+import EditarForm from '@/components/Form/editar/EditarForm.vue'
+import { useOrcamentoStore } from "@/stores/orcamentos";
+const edit = ref(false)
+const orcamentos = useOrcamentoStore()
+const editar = ref(false)
+const idOrcamento = ref(null)
+
+function opcoes(id) {
+  if (edit.value && idOrcamento.value == id) {
+    edit.value = false
+    idOrcamento.value = null
+  } else {
+    edit.value = true
+    idOrcamento.value = id
+  }
+}
+
+function editarOrcamento(orcamento) {
+  orcamentos.updateOrcamento(idOrcamento.value, orcamento)
+  editar.value = false
+  orcamento = ''
+}
 </script>
 <template>
   <main>
     <div class="container">
       <ul>
-        <li v-for="pessoa in pessoas" :key="pessoa.id">
+        <li v-for="orcamento in orcamentos.orcamentos" :key="orcamento.id">
           <div class="nome-email">
-            <p class="name">{{ pessoa.name }}</p>
-            <p class="email">{{ pessoa.email }}</p>
+            <p class="name">{{ orcamento.name }}</p>
+            <p class="email">{{ orcamento.email }}</p>
           </div>
           <div class="cellphone">
-            <p>{{ pessoa.cellphone }}</p>
+            <p>{{ orcamento.cellphone }}</p>
           </div>
           <div class="data">
-            <p>{{ pessoa.data }}</p>
+            <p>{{ orcamento.data }}</p>
           </div>
           <div class="status">
-            <p>{{ pessoa.status }}</p>
+            <p>{{ orcamento.status }}</p>
           </div>
           <div class="botao">
-            <Button v-if="edit">
+            <Button v-if="edit && idOrcamento === orcamento.id">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/delete.png" height="15" />
+              <img
+                class="edit-icons"
+                @click="editar = true"
+                src="@/assets/imagens/edit.png"
+                height="15"
+              />
+
+              <img
+                class="edit-icons"
+                @click="orcamentos.removeOrcamento(orcamento.id)"
+                src="@/assets/imagens/delete.png"
+                height="15"
+              />
               <img
                 class="edit-icons close"
-                @click="edit = false"
+                @click="opcoes(orcamento.id)"
                 src="@/assets/imagens/fechar2.png"
                 height="12"
               />
             </Button>
-            <Button v-else @click="edit = true"><p>. . .</p></Button>
+            <Button v-else @click="opcoes(orcamento.id)"><p>. . .</p></Button>
           </div>
         </li>
       </ul>
+    </div>
+    <div v-if="editar" class="editar">
+      <div class="editar-titulo">
+        <h1>Editar</h1>
+        <span @click="editar = false">X</span>
+      </div>
+      <EditarForm @editar="editarOrcamento" />
     </div>
   </main>
 </template>
@@ -94,6 +91,46 @@ main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
 }
+
+.editar {
+  position: absolute;
+  width: 15vw;
+  background-color: #385c7d;
+  padding: 30px;
+  top: 35vh;
+  margin-left: 12vw;
+  border-radius: 15px;
+}
+
+.editar-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.editar span {
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 28px;
+  width: 66vw;
+  margin-left: 15vw;
+}
+
+.buttons div {
+  font-weight: bold;
+  border: 1px solid;
+  padding: 0px 8px;
+  border-radius: 5px;
+  background-color: white;
+}
+
 p {
   color: #3f3f3f;
   font-family: "Poppins", sans-serif;

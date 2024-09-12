@@ -1,83 +1,80 @@
 <script setup>
 import { ref } from "vue";
 const edit = ref(false);
-const vendas = [
-  {
-    id: 1,
-    produto: "Capinha Rosa A53",
-    loja: "Mobile Tech",
-    tipo: "Acessório",
-    quantidade: "5 unidades",
-    valor: "R$ 25,50",
-  },
-  {
-    id: 2,
-    produto: "Capinha Rosa A53",
-    loja: "Mobile Tech",
-    tipo: "Acessório",
-    quantidade: "5 unidades",
-    valor: "R$ 25,50",
-  },
-  {
-    id: 3,
-    produto: "Capinha Rosa A53",
-    loja: "Mobile Tech",
-    tipo: "Acessório",
-    quantidade: "5 unidades",
-    valor: "R$ 25,50",
-  },
-  {
-    id: 4,
-    produto: "Capinha Rosa A53",
-    loja: "Mobile Tech",
-    tipo: "Acessório",
-    quantidade: "5 unidades",
-    valor: "R$ 25,50",
-  },
-  {
-    id: 5,
-    produto: "Capinha Rosa A53",
-    loja: "Mobile Tech",
-    tipo: "Acessório",
-    quantidade: "5 unidades",
-    valor: "R$ 25,50",
-  },
-];
+import EditarForm from '@/components/Form/editar/EditarForm.vue'
+import { useProdutoStore } from "@/stores/produtos";
+const produtos = useProdutoStore()
+const editar = ref(false)
+const idProduto = ref(null)
+
+function opcoes(id) {
+  if (edit.value && idProduto.value == id) {
+    edit.value = false
+    idProduto.value = null
+  } else {
+    edit.value = true
+    idProduto.value = id
+  }
+}
+
+function editarProduto(produto) {
+  produtos.updateProduto(idProduto.value, produto)
+  editar.value = false
+  produto = ''
+}
 </script>
 <template>
   <main>
     <div class="container">
       <ul>
-        <li v-for="venda in vendas" :key="venda.id">
+        <li v-for="produto in produtos.produtos" :key="produto.id">
           <div class="produto-loja">
-            <p class="produto">{{ venda.produto }}</p>
-            <p class="loja">{{ venda.loja }}</p>
+            <p class="produto">{{ produto.produto }}</p>
+            <p class="loja">{{ produto.loja }}</p>
           </div>
           <div class="tipo">
-            <p class="valor">{{ venda.tipo }}</p>
+            <p class="valor">{{ produto.tipo }}</p>
           </div>
           <div class="quantidade">
-            <p>{{ venda.quantidade }}</p>
+            <p>{{ produto.quantidade }}</p>
           </div>
           <div class="valor">
-            <p>{{ venda.valor }}</p>
+            <p>{{ produto.valor }}</p>
           </div>
           <div class="botao">
-            <Button v-if="edit">
+            <Button v-if="edit && idProduto === produto.id">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
-              <img class="edit-icons" src="@/assets/imagens/delete.png" height="15" />
+              <img
+                class="edit-icons"
+                @click="editar = true"
+                src="@/assets/imagens/edit.png"
+                height="15"
+              />
+
+              <img
+                class="edit-icons"
+                @click="produtos.removeProduto(produto.id)"
+                src="@/assets/imagens/delete.png"
+                height="15"
+              />
               <img
                 class="edit-icons close"
-                @click="edit = false"
+                @click="opcoes(produto.id)"
                 src="@/assets/imagens/fechar2.png"
                 height="12"
               />
             </Button>
-            <Button v-else @click="edit = true"><p>. . .</p></Button>
+            <Button v-else @click="opcoes(produto.id)"><p>. . .</p></Button>
           </div>
         </li>
       </ul>
+    </div>
+    <div v-if="editar" class="editar">
+      <div class="editar-titulo">
+        <h1>Editar</h1>
+        <span @click="editar = false">X</span>
+      </div>
+      <EditarForm @editar="editarProduto" />
     </div>
   </main>
 </template>
@@ -94,6 +91,31 @@ main {
   display: flex;
   background-color: rgba(243, 243, 243, 1);
 }
+
+.editar {
+  position: absolute;
+  width: 15vw;
+  background-color: #385c7d;
+  padding: 30px;
+  top: 35vh;
+  margin-left: 12vw;
+  border-radius: 15px;
+}
+
+.editar-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.editar span {
+  cursor: pointer;
+}
+
 p {
   color: #3f3f3f;
   font-family: "Poppins", sans-serif;

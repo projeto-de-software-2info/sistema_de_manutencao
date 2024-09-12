@@ -3,7 +3,10 @@ import { ref } from 'vue'
 import ButtonForm from './button/ButtonForm.vue'
 import InputForm from './input/InputForm.vue'
 import router from '@/router'
+import { useRoute } from 'vue-router'
+import { useFornecedoresStore } from '@/stores/fornecedores'
 import { useClientesStore } from '@/stores/clientes';
+import { useOrcamentoStore } from '@/stores/orcamentos'
 const props = defineProps(['fields', 'dados', 'titulo'])
 const formdata = ref({ ...props.dados })
 function estilo(type) {
@@ -13,10 +16,23 @@ function estilo(type) {
     return 'content-input'
   }
 }
-const teste = useClientesStore()
+const route = useRoute()
+const dado = ref()
+
+if(route.fullPath == '/cadastro/clientes'){
+  dado.value = useClientesStore()
+}
+else if(route.fullPath == '/cadastro/fornecedores'){
+  dado.value = useFornecedoresStore()
+}
+else if(route.fullPath == '/cadastro/orcamentos'){
+  dado.value = useOrcamentoStore()
+}
+
+console.log(dado.value)
 
 function cadastro(){
-  teste.adicionar(formdata.value)
+  dado.value.adicionar(formdata.value)
   router.back()
 }
 </script>

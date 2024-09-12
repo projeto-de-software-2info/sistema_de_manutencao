@@ -1,25 +1,34 @@
 <script setup>
 import DefaultForm from '../Form/DefaultForm.vue'
 import { ref } from 'vue'
-import router from '@/router'
 
 const dados = ref({
-  emailCliente: '',
-  modeloCelular: '',
-  pecas: ''
+  id: '',
+  name: '',
+  email: '',
+  pecas: '',
+  cellphone: '',
+  data: '5 maio,  2024',
+  status: 'Aprovado'
 })
 
 const fields = [
+{
+    type: 'string',
+    placeholder: 'nome completo',
+    value: 'name',
+    required: 'true'
+  },
   {
     type: 'email',
     placeholder: 'email do cliente',
-    value: 'emailCliente',
+    value: 'email',
     required: 'true'
   },
   {
     type: 'string',
     placeholder: 'modelo do celular',
-    value: 'modeloCelular',
+    value: 'cellphone',
     required: 'true'
   },
   {
