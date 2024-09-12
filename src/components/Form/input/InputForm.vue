@@ -60,6 +60,10 @@ input[type='email'] {
   margin-bottom: 18px;
 }
 
+input[type='checkbox']{
+  margin-bottom: 0;
+}
+
 input[type='password'] {
   margin-bottom: 0px;
 }

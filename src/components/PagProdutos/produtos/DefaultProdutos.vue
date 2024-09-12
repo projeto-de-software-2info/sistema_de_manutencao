@@ -202,7 +202,7 @@ button{
 }
 button p {
     margin-left: 5vw;
-    font-size: 16px;
+    font-size: 2vh;
     color: #3F3F3F;
     font-weight: 900;
 }

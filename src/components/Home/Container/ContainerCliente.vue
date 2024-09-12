@@ -24,6 +24,7 @@ defineProps({
   width: 90%;
   border-radius: 10px;
   margin: 11px 0px;
+  color: #3F3F3F;
 }
 
 .cliente span{
