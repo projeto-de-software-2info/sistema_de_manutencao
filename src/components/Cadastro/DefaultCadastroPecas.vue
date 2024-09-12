@@ -5,7 +5,7 @@ import router from '@/router'
 
 const dados = ref({
   nomePeca: '',
-  cnpjFornecedor: '',
+  CNPJ: '',
   preco: '',
   descricao: '',
   usada: ''
@@ -21,7 +21,7 @@ const fields = [
   {
     type: 'number',
     placeholder: 'CNPJ do fornecedor',
-    value: 'cnpjFornecedor',
+    value: 'CNPJ',
     required: 'true'
   },
   {

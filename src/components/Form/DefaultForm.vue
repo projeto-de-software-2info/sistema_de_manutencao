@@ -2,10 +2,21 @@
 import { ref } from 'vue'
 import ButtonForm from './button/ButtonForm.vue'
 import InputForm from './input/InputForm.vue'
+import cadeado from '@/assets/imagens/cadeado.svg'
+import email from '@/assets/imagens/email.png'
+import person from '@/assets/imagens/person.png'
+import calendario from '@/assets/imagens/calendario.png'
+import cep from '@/assets/imagens/cep.png'
+import cnpjFornecedor from '@/assets/imagens/cnpjFornecedor.png'
+import peca from '@/assets/imagens/peca.png'
+import telefone from '@/assets/imagens/Phone.png'
+import endereco from '@/assets/imagens/endereco.png'
+import preco from '@/assets/imagens/preco.png'
+import celular from '@/assets/imagens/celular.png'
 import router from '@/router'
 import { useRoute } from 'vue-router'
 import { useFornecedoresStore } from '@/stores/fornecedores'
-import { useClientesStore } from '@/stores/clientes';
+import { useClientesStore } from '@/stores/clientes'
 import { useOrcamentoStore } from '@/stores/orcamentos'
 const props = defineProps(['fields', 'dados', 'titulo'])
 const formdata = ref({ ...props.dados })
@@ -18,20 +29,18 @@ function estilo(type) {
 }
 const route = useRoute()
 const dado = ref()
-
-if(route.fullPath == '/cadastro/clientes'){
+const icon = ref()
+if (route.fullPath == '/cadastro/clientes') {
   dado.value = useClientesStore()
-}
-else if(route.fullPath == '/cadastro/fornecedores'){
+} else if (route.fullPath == '/cadastro/fornecedores') {
   dado.value = useFornecedoresStore()
-}
-else if(route.fullPath == '/cadastro/orcamentos'){
+} else if (route.fullPath == '/cadastro/orcamentos') {
   dado.value = useOrcamentoStore()
 }
 
 console.log(dado.value)
 
-function cadastro(){
+function cadastro() {
   dado.value.adicionar(formdata.value)
   router.back()
 }
@@ -43,7 +52,12 @@ function cadastro(){
     <div class="form">
       <form @submit.prevent="cadastro()" validate>
         <div :class="[estilo(field.type)]" v-for="(field, index) in fields" :key="index">
-          <div class="icon"></div>
+          <div
+            class="icon"
+            v-if="(field.type == 'email')? icon = email: (field.type == 'password')? icon = cadeado:(field.value== 'name')? icon = person: (field.value== 'cep')? icon = cep:(field.value == 'endereco')? icon = endereco: (field.value== 'telefone')? icon = telefone:(field.value == 'cellphone')? icon = celular:(field.value == 'pecas' || field.value == 'nomePeca' )? icon = peca:(field.value == 'CNPJ')? icon = cnpjFornecedor:(field.value == 'preco')? icon = preco:(field.type == 'date')? icon = calendario:null"
+          >
+            <img :src="icon" alt="" />
+          </div>
           <InputForm
             :type="field.type"
             :placeholder="field.placeholder"
@@ -53,7 +67,15 @@ function cadastro(){
           <small v-if="field.type == 'password'">Esqueceu a senha?</small>
           <div v-if="field.type == 'checkbox'" class="checkbox">{{ field.nome }}</div>
         </div>
-        <ButtonForm :titulo="$route.fullPath == '/' ? 'Entrar' : $route.fullPath == '/cadastro/relatorios' ? 'Gerar Relatório':'Cadastrar'" />
+        <ButtonForm
+          :titulo="
+            $route.fullPath == '/'
+              ? 'Entrar'
+              : $route.fullPath == '/cadastro/relatorios'
+                ? 'Gerar Relatório'
+                : 'Cadastrar'
+          "
+        />
       </form>
     </div>
   </div>

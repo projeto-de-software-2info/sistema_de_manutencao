@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import router from '@/router'
 
 const dados = ref({
-  cnpjFornecedor: '',
+  CNPJ: '',
   preco: '',
   descricao: '',
   categoria: ''
@@ -14,7 +14,7 @@ const fields = [
   {
     type: 'number',
     placeholder: 'CNPJ do fornecedor',
-    value: 'cnpjFornecedor',
+    value: 'CNPJ',
     required: 'true'
   },
   {
