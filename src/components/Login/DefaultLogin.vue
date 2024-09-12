@@ -47,7 +47,7 @@ function salvar(info) {
     <section class="login-form">
       <DefaultForm
         :fields="fields"
-        @enviar="salvar"
+        @salvar="salvar"
         :dados="dados"
         titulo="Login"
         button-nome="Entrar"

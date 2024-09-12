@@ -50,7 +50,7 @@ function cadastro() {
   <div class="content-form">
     <h1>{{ props.titulo }}</h1>
     <div class="form">
-      <form @submit.prevent="cadastro()" validate>
+      <form @submit.prevent="(route.fullPath == '/')? $emit('salvar', formdata): cadastro()" validate>
         <div :class="[estilo(field.type)]" v-for="(field, index) in fields" :key="index">
           <div
             class="icon"

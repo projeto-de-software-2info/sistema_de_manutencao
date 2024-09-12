@@ -183,7 +183,7 @@ button {
 }
 button p {
   margin-left: 5vw;
-  font-size: 14px;
+  font-size: 2vh;
   color: #3f3f3f;
   font-weight: 900;
   width: max-content;
