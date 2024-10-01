@@ -68,3 +68,8 @@ export const useProdutoStore = defineStore('produtos', () => {
 
   return { produtos, adicionar, removeProduto, updateProduto}
 })
+export const useSearchStore = defineStore('pesquisa', () => {
+  const search = ref('')
+  const filter = ref('Todos os filtros')
+  return { search, filter }
+})

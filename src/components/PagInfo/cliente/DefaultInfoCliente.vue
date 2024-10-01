@@ -1,49 +1,71 @@
 <script setup>
 import { ref } from "vue";
+import { useSearchStore } from "@/stores/produtos";
+const searchStore = useSearchStore();
 const edit = ref(false);
 const pessoas = [
   {
     id: 1,
-    name: 'Júlia Fuck',
-    email: 'juliaifc22@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    name: "Troca de capinha",
+    email: "juliaifc22@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
+    priority: "maisrecentes",
   },
   {
     id: 2,
-    name: 'Rafaela Barbieri da Cruz',
-    email: 'rafaelabarbieric@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Em progresso'
+    name: "Rafaela Barbieri da Cruz",
+    email: "rafaelabarbieric@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Em progresso",
+    priority: "maisrecentes",
   },
   {
     id: 3,
-    name: 'Ana Laura Manfrom Dias',
-    email: 'anamanfrondias@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    name: "Ana Laura Manfrom Dias",
+    email: "anamanfrondias@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
+    priority: "principais",
   },
   {
     id: 4,
-    name: 'Isabelli Luísa Rosa',
-    email: 'isabelli.ifc@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Em progresso'
+    name: "Isabelli Luísa Rosa",
+    email: "isabelli.ifc@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Em progresso",
+    priority: "principais",
   },
   {
     id: 5,
-    name: 'Guilherme Schreiber',
-    email: 'guilhermeschreiber2007@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
-  }
-]
+    name: "Guilherme Schreiber",
+    email: "guilhermeschreiber2007@gmail.com",
+    data: "1 maio,  2024  até  5 maio,  2024",
+    status: "Finalizado",
+    priority: "ativos",
+  },
+];
+
+function filteredProducts() {
+  let productF = [];
+  productF = pessoas.filter((productType) => {
+    return productType.name.toLowerCase().includes(searchStore.search.toLowerCase());
+  });
+  productF = productF.filter((selectedType) => {
+    if (searchStore.filter != "Todos os filtros") {
+      let filteredProduct = selectedType.priority;
+      filteredProduct += selectedType.name;
+      return filteredProduct.toLowerCase().includes(searchStore.filter.toLowerCase());
+    } else return selectedType;
+  });
+  return productF;
+}
 </script>
 <template>
   <main>
     <div class="container">
       <ul>
-        <li v-for="pessoa in pessoas" :key="pessoa.id">
+        <li v-for="pessoa in filteredProducts()" :key="pessoa.id">
           <div class="nome-email">
             <p class="name">{{ pessoa.name }}</p>
             <p class="email">{{ pessoa.email }}</p>
@@ -55,8 +77,6 @@ const pessoas = [
             <p>{{ pessoa.status }}</p>
           </div>
           <div class="botao">
-  
-
             <Button v-if="edit">
               <img class="edit-icons" src="@/assets/imagens/read.png" height="15" />
               <img class="edit-icons" src="@/assets/imagens/edit.png" height="15" />
@@ -69,7 +89,6 @@ const pessoas = [
               />
             </Button>
             <Button v-else @click="edit = true"><p>. . .</p></Button>
-
           </div>
         </li>
       </ul>
