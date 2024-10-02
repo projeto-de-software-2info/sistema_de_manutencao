@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import DefaultHeader from '../Paginas/header/DefaultHeader.vue'
+import PaginaFiltro from '../Paginas/Filtros/PaginaFiltro.vue'
 const edit = ref(false);
 const pessoas = [
   {
@@ -7,27 +9,27 @@ const pessoas = [
     name: 'Júlia Fuck',
     email: 'juliaifc22@gmail.com',
     data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    status: 'Devolvido'
   },
   {
     id: 2,
     name: 'Rafaela Barbieri da Cruz',
     email: 'rafaelabarbieric@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Em progresso'
+    data: '1 maio,  2024',
+    status: 'Em loja'
   },
   {
     id: 3,
     name: 'Ana Laura Manfrom Dias',
     email: 'anamanfrondias@gmail.com',
     data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    status: 'Em loja'
   },
   {
     id: 4,
     name: 'Isabelli Luísa Rosa',
     email: 'isabelli.ifc@gmail.com',
-    data: '1 maio,  2024  até  5 maio,  2024',
+    data: '5 maio,  2024',
     status: 'Em progresso'
   },
   {
@@ -35,11 +37,14 @@ const pessoas = [
     name: 'Guilherme Schreiber',
     email: 'guilhermeschreiber2007@gmail.com',
     data: '1 maio,  2024  até  5 maio,  2024',
-    status: 'Finalizado'
+    status: 'Em loja'
   }
 ]
 </script>
 <template>
+    <div class="tudo">
+        <DefaultHeader titulo="Equipamentos"/>
+         <PaginaFiltro/> 
   <main>
     <div class="container">
       <ul>
@@ -69,30 +74,22 @@ const pessoas = [
               />
             </Button>
             <Button v-else @click="edit = true"><p>. . .</p></Button>
-
           </div>
         </li>
-        <button class="analisar-servicos">Analisar serviços</button>
       </ul>
     </div>
   </main>
-  
+</div>
 </template>
 <style scoped>
-.analisar-servicos{
-  border: 1px solid #385C7D;
-  background-color: #EDEDED;
-  text-align: left;
-  font-weight: bold;
-  font-size: 16px;
-  color: #385C7D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: max-content;
-  padding: 5px 20px;
-  border-radius: 5px;
-  margin-top: 20px;
+.tudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 243, 243, 1);
+    margin-left: 10px;
+    height: 100vh;
 }
 .edit-icons {
   height: 12px;
@@ -118,7 +115,7 @@ p {
   justify-content: start;
   align-items: center;
   border-radius: 10px;
-  margin-bottom: 7vh;
+  margin-bottom: 16vh;
   margin-left: 20vw;
 }
 ul {
