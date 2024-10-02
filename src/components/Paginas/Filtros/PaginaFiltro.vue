@@ -1,33 +1,131 @@
 <script setup>
-import { ref } from 'vue'
-
-const filtros = ref(['Ativo', 'Mais recentes'])
-function remover(index) {
-  filtros.value.splice(index, 1)
+import { ref } from "vue";
+import { useSearchStore } from "@/stores/produtos";
+const searchStore = useSearchStore();
+const openFilter = ref(false);
+function remover() {
+  searchStore.filter = "Todos os filtros";
 }
 </script>
 <template>
   <div class="main">
     <div class="filtros">
       <p>Filtros:</p>
-      <ul>
-        <li v-for="(filtro, index) in filtros" :key="index">
-          {{ filtro }} <button @click="remover(index)">x</button>
-        </li>
+      <ul v-if="searchStore.filter != 'Todos os filtros'">
+        {{
+          searchStore.filter
+        }}
+        <button @click="remover()">x</button>
       </ul>
     </div>
-    <div class="filtros-scroll">
-      <select name="filtros" id="filtros">
-        <option selected value="filtro">Filtros</option>
-        <option value="Ativo">Ativo</option>
-        <option value="Mais recentes">Mais recentes</option>
-      </select>
+    <div class="titulo-filter" @click="openFilter = !openFilter">
+      <span>Filtros</span> <img src="@/assets/imagens/polygon.png" />
+    </div>
+    <div id="filtros" v-if="openFilter">
+      <div id="containerFilters">
+        <label class="filter" for="allFilters">Todos os filtros</label>
+        <input
+          type="radio"
+          id="allFilters"
+          name="filterOpition"
+          value="Todos os filtros"
+          v-model="searchStore.filter"
+        />
+        <label class="filter" for="ativos">Ativos</label>
+        <input
+          type="radio"
+          id="ativos"
+          name="filterOpition"
+          value="ativos"
+          v-model="searchStore.filter"
+        />
+        <label class="filter" for="principais">Principais</label>
+        <input
+          type="radio"
+          id="principais"
+          name="filterOpition"
+          value="principais"
+          v-model="searchStore.filter"
+        />
+        <label class="filter" for="maisrecentes">Mais recentes</label>
+        <input
+          type="radio"
+          id="maisrecentes"
+          name="filterOpition"
+          value="maisrecentes"
+          v-model="searchStore.filter"
+        />
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+input {
+  appearance: none;
+}
+ul {
+  background-color: rgba(194, 194, 194, 0.116);
+  border-radius: 20px;
+  margin: 1.9vh 0 1vh 4vw;
+}
+#filtros {
+  z-index: 99999999999999999;
+  width: min-content;
+  height: min-content;
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  text-align: end;
+  margin-top: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  right: 6vw;
+}
+#containerFilters {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
+.titulo-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(56, 92, 125, 1);
+  text-decoration: none;
+  margin: 0 0 0 0.5vw;
+  font-size: 18px;
+  font-weight: 600;
+  appearance: none;
+}
+.titulo-filter span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(56, 92, 125, 1);
+  text-decoration: none;
+  margin: 0 0 0 0.5vw;
+  font-size: 18px;
+  font-weight: 600;
+  appearance: none;
+  padding: 10px;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(56, 92, 125, 1);
+  text-decoration: none;
+  margin: 0 0 0 0.5vw;
+  font-size: 18px;
+  font-weight: 600;
+  appearance: none;
+}
 .main {
   display: flex;
   align-items: center;
@@ -58,14 +156,14 @@ select {
   font-weight: 600;
 }
 
-select option{
-    border: none;
+select option {
+  border: none;
 }
 
 p {
   font-size: 2.5vh;
   color: rgba(56, 92, 125, 1);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 1.9vh 0 1vh 4vw;
 }
 
@@ -77,7 +175,7 @@ ul {
 li {
   font-size: 2vh;
   color: rgba(56, 92, 125, 1);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-left: 1.8vw;
   margin-top: 1.9vh;
   background-color: rgba(255, 255, 255, 0.75);
@@ -93,7 +191,7 @@ li {
 button {
   font-size: 1.8vh;
   color: rgba(56, 92, 125, 1);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: transparent;
   border: none;
   width: 2.6vh;
