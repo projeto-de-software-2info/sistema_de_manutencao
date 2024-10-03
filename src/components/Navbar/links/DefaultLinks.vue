@@ -58,6 +58,11 @@ const links = [
     link: '/produtos'
   },
   {
+    text: 'Equipamentos',
+    icon: 'equipamentos.png',
+    link: '/equipamentos'
+  },
+  {
     text: 'Perfil',
     icon: 'perfil.png',
     link: '/perfil'
@@ -66,35 +71,30 @@ const links = [
 </script>
 <template>
   <ul>
-    <NavbarLinks
-      v-for="(text, index) in links"
-      :key="index"
-      :text="text.text"
-      :link="text.link"
-      :icon="
-        text.text == 'Início'
-          ? Inicio
-          : text.text == 'Serviços'
-            ? Servicos
-            : text.text == 'Vendas'
-              ? Vendas
-              : text.text == 'Faturamento'
-                ? Faturamento
-                : text.text == 'Clientes'
-                  ? Clientes
-                  : text.text == 'Orçamento'
-                    ? Orcamento
-                    : text.text == 'Fornecedores'
-                      ? Fornecedores
-                      : text.text == 'Relatórios'
-                        ? Relatorios
-                        : text.text == 'Produtos'
-                          ? Produtos
-                          : text.text == 'Perfil'
-                            ? Perfil
+    <NavbarLinks v-for="(text, index) in links" :key="index" :text="text.text" :link="text.link" :icon="text.text == 'Início'
+        ? Inicio
+        : text.text == 'Serviços'
+          ? Servicos
+          : text.text == 'Vendas'
+            ? Vendas
+            : text.text == 'Faturamento'
+              ? Faturamento
+              : text.text == 'Clientes'
+                ? Clientes
+                : text.text == 'Orçamento'
+                  ? Orcamento
+                  : text.text == 'Fornecedores'
+                    ? Fornecedores
+                    : text.text == 'Relatórios'
+                      ? Relatorios
+                      : text.text == 'Produtos'
+                        ? Produtos
+                        : text.text == 'Perfil'
+                          ? Perfil
+                          : text.text == 'Equipamentos'
+                            ? Servicos
                             : ''
-      "
-    />
+      " />
   </ul>
 </template>
 <style scoped>
