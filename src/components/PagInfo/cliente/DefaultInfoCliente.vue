@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useSearchStore } from "@/stores/produtos";
 const searchStore = useSearchStore();
 const edit = ref(false);
+const maisinfo = ref(false);
 const pessoas = [
   {
     id: 1,
@@ -91,11 +92,88 @@ function filteredProducts() {
             <Button v-else @click="edit = true"><p>. . .</p></Button>
           </div>
         </li>
+        <button  @click="maisinfo=true" class="analisar-servicos">Analisar serviços</button>
       </ul>
     </div>
   </main>
+  <div class="maisinfo" v-if="maisinfo">
+    <span  @click="maisinfo=false" class="fechar">x</span>
+  <div class="container2">
+    <select name="filtros" id="filtros">
+      <option selected value="filtro">tipo de serviço</option>
+      <option value="Ativo">tipo de serviço 1</option>
+      <option value="Mais recentes">tipo de serviços 2</option>
+    </select>
+    <div class="perfil-information-edit">
+      <div class="information">
+        <span class="information-title">Margens de faturamento:  R$400,00</span>
+      </div>
+      <div class="information">
+        <span class="information-title">Tempo médio para realização:  3 dias</span>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 <style scoped>
+select {
+  color: #2f506e;
+  width: 280px;
+  height:40px;
+  background-color: rgba(243, 243, 243, 1);
+  text-decoration: none;
+  border: 2px solid #385C7D;
+  border-radius: 10px;
+  margin: 40px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.fechar{
+  top:0vh;
+  margin-left: 360px;
+  position: absolute;
+  z-index:2;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.information-title {
+  font-weight: bold;
+}
+.information input{
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+}
+.maisinfo{
+  width: 100vw;
+  top:20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #EDEDED;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.analisar-servicos{
+  border: 1px solid #385C7D;
+  background-color: #EDEDED;
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  color: #385C7D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
 .edit-icons {
   height: 12px;
   margin: 5px;
@@ -120,7 +198,7 @@ p {
   justify-content: start;
   align-items: center;
   border-radius: 10px;
-  margin-bottom: 16vh;
+  margin-bottom: 7vh;
   margin-left: 20vw;
 }
 ul {
