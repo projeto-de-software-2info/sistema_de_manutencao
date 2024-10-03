@@ -16,7 +16,6 @@
    main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: rgba(243, 243, 243, 1);
     margin-left: 10px;

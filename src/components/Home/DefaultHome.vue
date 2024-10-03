@@ -22,6 +22,8 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
           <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
           <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
           <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
+          <ContainerCliente email="rafaelabarbieri@gmail.com" information="..." />
         </div>
         <div class="graficos">
           <HomeGraphs :image="GraficoFaturamento" />
@@ -95,13 +97,13 @@ import GraficoEntradaSaida from '@/assets/imagens/entrada-e-saida.png'
     margin-top:60px ;
   }
   .clientes{
-    height: 550px;
+    height: 650px;
   }
   .dados {
-    height: 550px;
+    height: 650px;
   }
   .graficos {
-    height: 550px;
+    height: 650px;
   }
 }
 </style>

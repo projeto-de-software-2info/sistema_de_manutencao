@@ -12,7 +12,8 @@ defineProps({
   <style scoped>
   .container {
     width: 12vw;
-    height: 130px;
+    height: 150px;
+    margin-bottom: 30px;
     background-color: #385C7D;
     border-radius: 10px;
     display: flex;

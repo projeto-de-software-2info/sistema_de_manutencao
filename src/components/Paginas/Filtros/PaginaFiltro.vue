@@ -5,6 +5,7 @@ const searchStore = useSearchStore();
 const openFilter = ref(false);
 function remover() {
   searchStore.filter = "Todos os filtros";
+  openFilter.value = false
 }
 </script>
 <template>
@@ -68,6 +69,8 @@ ul {
   background-color: rgba(194, 194, 194, 0.116);
   border-radius: 20px;
   margin: 1.9vh 0 1vh 4vw;
+  color: black;
+  padding: 10px;
 }
 #filtros {
   z-index: 99999999999999999;
@@ -78,10 +81,9 @@ ul {
   display: flex;
   justify-content: end;
   text-align: end;
-  margin-top: 300px;
-  border: 1px solid black;
+  margin-top: 180px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgb(255, 255, 255);
   right: 6vw;
 }
 #containerFilters {

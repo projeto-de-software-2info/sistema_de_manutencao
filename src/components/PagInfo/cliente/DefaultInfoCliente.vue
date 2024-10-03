@@ -7,7 +7,7 @@ const maisinfo = ref(false);
 const pessoas = [
   {
     id: 1,
-    name: "Troca de capinha",
+    name: "Troca de pelicula",
     email: "juliaifc22@gmail.com",
     data: "1 maio,  2024  até  5 maio,  2024",
     status: "Finalizado",
@@ -15,7 +15,7 @@ const pessoas = [
   },
   {
     id: 2,
-    name: "Rafaela Barbieri da Cruz",
+    name: "Manutenção de bateria",
     email: "rafaelabarbieric@gmail.com",
     data: "1 maio,  2024  até  5 maio,  2024",
     status: "Em progresso",
@@ -23,7 +23,7 @@ const pessoas = [
   },
   {
     id: 3,
-    name: "Ana Laura Manfrom Dias",
+    name: "Manutenção de tela",
     email: "anamanfrondias@gmail.com",
     data: "1 maio,  2024  até  5 maio,  2024",
     status: "Finalizado",
@@ -31,7 +31,7 @@ const pessoas = [
   },
   {
     id: 4,
-    name: "Isabelli Luísa Rosa",
+    name: "Troca de pelicula",
     email: "isabelli.ifc@gmail.com",
     data: "1 maio,  2024  até  5 maio,  2024",
     status: "Em progresso",
@@ -39,7 +39,7 @@ const pessoas = [
   },
   {
     id: 5,
-    name: "Guilherme Schreiber",
+    name: "Troca de pelicula",
     email: "guilhermeschreiber2007@gmail.com",
     data: "1 maio,  2024  até  5 maio,  2024",
     status: "Finalizado",
@@ -127,6 +127,9 @@ select {
   margin: 40px;
   font-size: 15px;
   font-weight: 600;
+  text-indent: -10px;
+  display: flex;
+  text-align: center;
 }
 .fechar{
   top:0vh;
@@ -139,8 +142,9 @@ select {
   flex-direction: column;
   margin-bottom: 20px;
 }
-.information-title {
+.information-title, .fechar{
   font-weight: bold;
+  color:#2f506e
 }
 .information input{
   border: none;
